@@ -9,23 +9,27 @@ const { connectToDatabase } = require('./util/db')
 app.use(cors())
 app.use(express.json())
 
-const errorHandler = (error, request, response, next) => {
+const checkoutRouter = require('./controllers/checkout')
+
+app.use('/api/create-checkout-session', checkoutRouter)
+
+const errorHandler = (error, req, res, next) => {
     console.error(error.message)
   
     if (error) {
-      return response.status(400).send({ error: 'something went wrong' })
+      return res.status(400).send({ error: 'something went wrong' })
     }
     next(error)
   }
   
-  app.use(errorHandler)
+app.use(errorHandler)
 
-  const start = async () => {
-    await connectToDatabase()
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`)
-    })
-  }
-  
-  start()
+const start = async () => {
+  await connectToDatabase()
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+  })
+}
+
+start()
   

@@ -13,33 +13,35 @@ export const Cart = () => {
 
     const navigate = useNavigate()
 
-    console.log(cartDetailed, 'cartDetailed')
-
     const makePayment = async () => {
-        const stripe = await loadStripe(`${process.env.STRIPE_KEY}`)
+        const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_KEY}`)
 
         const body = {
             products: cartDetailed
         }
 
         const headers = {
-            "Content-Type":"application.json"
+            'Content-Type': 'application/json',
         }
-
-        const response = await fetch(`${apiURL}/create-checkout-session`,{
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/create-checkout-session`, {
             method:"POST",
             headers:headers,
             body:JSON.stringify(body)
         })
-
-        const session = await response.json();
+        console.log(response, 'response')
+        if (!response.ok) {
+            console.error('HTTP error:', response.status, response.statusText);
+            throw new Error('Network response was not ok');
+        }
+        const session = await response.json()
+        console.log(session, 'session')
 
         const result = stripe.redirectToCheckout({
             sessionId:session.id
         })
-        
-        if(result.error){
-            console.log(result.error)
+
+        if (result.error) {
+            console.log(result.error, 'result error');
         }
     }
 
