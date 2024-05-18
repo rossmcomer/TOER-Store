@@ -1,18 +1,22 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { NavBar } from "./components/navbar"
+import { ThemeToggle } from "./components/themeToggle"
 import { Shop } from './pages/shop/shop'
 import { Cart } from './pages/cart/cart'
 import { Success } from './pages/success/success'
 import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
+    <ShopContextProvider>
     <div className="App">
-      <ShopContextProvider>
       <Router>
         <NavBar />
+        <ThemeToggle />
+        <Toaster />
           <Routes>
             <Route path="/" element={<Shop/>}/>
             <Route path="/cart"element={<Cart/>}/>
@@ -20,8 +24,8 @@ function App() {
             <Route path="/cancel"element={<Cancel/>}/>
           </Routes>
       </Router>
-      </ShopContextProvider>
     </div>
+    </ShopContextProvider>
   );
 }
 

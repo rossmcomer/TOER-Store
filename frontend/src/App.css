@@ -1,5 +1,27 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --box-shadow-color: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  --border: 1px solid black;
+  --border-bold: 2px solid rgb(19,19,19);
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --box-shadow-color: 0px 3px 15px rgba(231, 231, 231, 0.2);
+  --border: 1px solid white;
+  --border-bold: 2px solid rgb(255, 255, 255);
+  
+}
+
 .App {
   font-family: 'Courier New', Courier, monospace;
+  background-color: var(--background-color);
+}
+
+body {
+  margin: 0
 }
 
 /* navbar */
@@ -9,7 +31,7 @@
   height: 80px;
   background-color:goldenrod;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -24,6 +46,10 @@
   color: black;
   margin-left: 20px;
   font-size: 25px;
+}
+
+.navbar .logo img {
+  height: 70px;
 }
 
 /* navbar ends*/

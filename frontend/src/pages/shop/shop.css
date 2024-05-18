@@ -1,7 +1,8 @@
 .shopTitle {
     margin-top: 100px;
     text-align: center;
-    font-size: 40px
+    font-size: 40px;
+    color: var(--text-color)
   }
   
   .products {
@@ -9,7 +10,7 @@
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    place-items: center;
+    align-items: center;
     justify-content: space-evenly;
   }
   
@@ -26,12 +27,14 @@
   
   .product img {
     width: 400px;
-    border: 2px solid black;
+    border: var(--border);
     border-radius: 1px;
+    box-shadow: var(--box-shadow-color);
   }
   
   .product .description {
-    text-align: center
+    text-align: center;
+    color: var(--text-color)
   }
   
   .product:hover {
@@ -41,15 +44,16 @@
   
   .addToCartBtn {
     background-color: transparent;
-    border: 2px solid rgb(19,19,19);
+    border: var(--border-bold);
     min-width: 100px;
     padding: 5px 10px;
     border-radius: 5px;
+    color: var(--text-color);
   }
   
-  .addToCartBttn:hover {
-    background-color: rgb(19, 19, 19);
-    color: white;
-    cursor: pointer
+  .addToCartBtn:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    cursor: pointer;
   }
   

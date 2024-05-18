@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react"
 import { PRODUCTS } from "../products"
+import { toast } from 'react-hot-toast'
 
 export const ShopContext = createContext(null)
 
@@ -13,6 +14,14 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart())
+
+    const notify = (message, type) => {
+          if (type==='success'){
+            toast.success(message, { id: 'clipboard', style: {minWidth: '250px', textAlign: 'center'} })
+          } else if (type==='error'){
+            toast.error(message, { id: 'clipboard', style: {minWidth: '250px', textAlign: 'center'} })
+          }
+      }
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
@@ -44,10 +53,14 @@ export const ShopContextProvider = (props) => {
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 }))
+        let product = PRODUCTS.find((product) => product.id === itemId)
+        notify(`${product.productName} successfully added to cart`, 'success')
     }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 }))
+        let product = PRODUCTS.find((product) => product.id === itemId)
+        notify(`${product.productName} successfully removed from cart`, 'error')
     }
 
     const updateCartItemCount = (newAmount, itemId) => {
@@ -56,6 +69,5 @@ export const ShopContextProvider = (props) => {
 
     const contextValue = { cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, getCartDetailed }
 
-    //console.log(cartItems, 'cartItems')
   return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
 }

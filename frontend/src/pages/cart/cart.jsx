@@ -28,13 +28,13 @@ export const Cart = () => {
             headers:headers,
             body:JSON.stringify(body)
         })
-        console.log(response, 'response')
+
         if (!response.ok) {
             console.error('HTTP error:', response.status, response.statusText);
             throw new Error('Network response was not ok');
         }
+        
         const session = await response.json()
-        console.log(session, 'session')
 
         const result = stripe.redirectToCheckout({
             sessionId:session.id

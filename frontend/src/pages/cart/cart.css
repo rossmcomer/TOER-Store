@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .cartItem {
@@ -10,13 +12,16 @@
     height: 250px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow-color);
     border-radius: 25px;
     margin: 30px;
 }
 
 .cartItem img {
     width: 200px;
+    margin: 10px;
+    border: var(--border);
+    border-radius: 1px;
 }
 
 .cartItem .description {
@@ -33,10 +38,14 @@
 .checkout button {
     width: 150px;
     height: 50px;
-    background-color: rgb(19, 19, 19);
-    color: white;
+    background-color: var(--text-color);
+    color: var(--background-color);
     border: none;
     border-radius: 8px;
     margin: 10px;
     cursor: pointer;
+}
+
+.checkout p {
+    text-align: center;
 }
