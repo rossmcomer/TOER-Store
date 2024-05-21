@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     color: var(--text-color);
-    background-color: var(--background-color);
 }
 
 .cartItem {
@@ -15,13 +14,14 @@
     box-shadow: var(--box-shadow-color);
     border-radius: 25px;
     margin: 30px;
+    border: var(--border)
 }
 
 .cartItem img {
     width: 200px;
     margin: 10px;
     border: var(--border);
-    border-radius: 1px;
+    border-radius: 20px;
 }
 
 .cartItem .description {

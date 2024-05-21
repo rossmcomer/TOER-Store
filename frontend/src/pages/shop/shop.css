@@ -1,5 +1,5 @@
 .shopTitle {
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
     font-size: 40px;
     color: var(--text-color)
@@ -43,7 +43,7 @@
   }
   
   .addToCartBtn {
-    background-color: transparent;
+    background-color: var(--background-color);
     border: var(--border-bold);
     min-width: 100px;
     padding: 5px 10px;
@@ -54,6 +54,7 @@
   .addToCartBtn:hover {
     background-color: var(--text-color);
     color: var(--background-color);
+    border: var(--border-bold);
     cursor: pointer;
   }
   
