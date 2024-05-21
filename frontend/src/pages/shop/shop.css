@@ -1,8 +1,15 @@
+.shop {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .shopTitle {
-    margin-top: 50px;
+    margin-top: 80px;
     text-align: center;
     font-size: 40px;
-    color: var(--text-color)
+    color: var(--text-color);
+    min-width: 350px;
   }
   
   .products {
@@ -18,7 +25,7 @@
     border-radius: 15px;
     width: 300px;
     height: 350px;
-    margin: 100px;
+    margin: 50px 10px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +33,7 @@
   }
   
   .product img {
-    width: 400px;
+    width: 300px;
     border: var(--border);
     border-radius: 1px;
     box-shadow: var(--box-shadow-color);
@@ -34,7 +41,7 @@
   
   .product .description {
     text-align: center;
-    color: var(--text-color)
+    color: var(--text-color);
   }
   
   .product:hover {
