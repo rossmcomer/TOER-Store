@@ -8,11 +8,17 @@
     width: 100%;
 }
 
+.cartItems {
+    overflow: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .cartItemsTable {
     border-collapse: collapse;
-    margin: 5px;
-    width: 100%;
-    max-width: 800px;
+    margin: 0px 5px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
 }
 
 .leftAlign {
@@ -37,18 +43,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    text-align: left;
 }
 
 .cartItem img {
     width: 40px;
-    margin: 10px;
+    margin: 8px;
     margin-left: 0px;
     border: var(--border);
     border-radius: 4px;
 }
 
 .cartItemprice {
-    justify-content:center; 
+    justify-content:center;
 }
 
 .countHandler {

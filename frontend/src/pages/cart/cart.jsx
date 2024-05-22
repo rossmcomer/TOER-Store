@@ -50,12 +50,11 @@ export const Cart = () => {
         <div>
             <h1>Your Cart Items</h1>
         </div>
-        <div>
+        <div className="cartItems">
             <table className="cartItemsTable">
             <thead>
                 <tr>
                     <th className="leftAlign">Product</th>
-                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
                 </tr>

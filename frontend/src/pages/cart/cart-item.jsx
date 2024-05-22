@@ -12,9 +12,8 @@ export const CartItem = (props) => {
     <tr className="cartItem">
         <td className="description">
             <img src={productImage} alt={productName} className="cartItemImage" />
-            <span className="cartItemName"><b>{productName}</b></span>
+            <span className="cartItemName"><b>{productName}</b> - ${price}</span>
         </td>
-        <td className="cartItemprice">${price}</td>
         <td>
             <div className="countHandler">
                 <button onClick={() => removeFromCart(id)}>
