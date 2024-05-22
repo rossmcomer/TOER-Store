@@ -7,7 +7,9 @@ import { ThemeToggle } from "./themeToggle"
 export const NavBar = () => {
     return <div className="navbar">
         <div className="logo">
-                <img src={logo} alt="Logo" />
+            <Link to="/">
+            <img src={logo} alt="Logo" />
+            </Link>
         </div>
         <div className="links">
             <Link to="/"> Shop </Link>
