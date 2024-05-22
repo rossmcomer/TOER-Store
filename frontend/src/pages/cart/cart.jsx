@@ -50,7 +50,7 @@ export const Cart = () => {
         <div>
             <h1>Your Cart Items</h1>
         </div>
-        <div className="cartItems">
+        <div>
             <table className="cartItemsTable">
             <thead>
                 <tr>
