@@ -51,6 +51,16 @@ export const Cart = () => {
             <h1>Your Cart Items</h1>
         </div>
         <div className="cartItems">
+            <table className="cartItemsTable">
+            <thead>
+                <tr>
+                    <th className="leftAlign">Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
             { PRODUCTS.map((product) => {
                 if(cartItems[product.id] !== 0) {
                     return <CartItem data={product} key={product.id}/>
@@ -58,10 +68,12 @@ export const Cart = () => {
                     return null
                 }
             })}
+            </tbody>
+            </table>
         </div>
         {totalAmount > 0 ? (
         <div className="checkout">
-            <p> Subtotal: ${totalAmount}</p>
+            <p> <b>Total: ${totalAmount}</b></p>
             <div className="buttonContainer">
             <button onClick={() => navigate("/")}> Continue Shopping </button>
             <button onClick={makePayment}> Checkout </button>
