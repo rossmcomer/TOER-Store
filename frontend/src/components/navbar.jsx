@@ -9,7 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 
 export const NavBar = () => {
     const { isAuthenticated } = useAuth0()
-    
+
     return <div className="navbar">
         <div className="logo">
             <Link to="/">
@@ -21,7 +21,6 @@ export const NavBar = () => {
             <Link to="/cart"> 
                 <ShoppingCart size={32} />
             </Link>
-            <ThemeToggle/>
             {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
     </div>

@@ -8,6 +8,7 @@ import { Success } from './pages/success/success'
 import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
 import { Toaster } from 'react-hot-toast'
+import { ThemeToggle } from "./components/themeToggle"
 
 function App() {  
 
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <NavBar />
         <Toaster />
+        <ThemeToggle/>
           <Routes>
             <Route path="/" element={<Shop/>}/>
             <Route path="/cart"element={<Cart/>}/>

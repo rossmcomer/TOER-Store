@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0()
 
-  return <Link onClick={() => loginWithRedirect()}>Sign-in</Link>
+  return <Link id="loginBtn" onClick={() => loginWithRedirect()}>Sign-in</Link>
 }
 
 export default LoginButton
