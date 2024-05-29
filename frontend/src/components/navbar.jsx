@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { ShoppingCart } from 'phosphor-react'
 import logo from "../assets/Twhitebackground.png"
 import { ThemeToggle } from "./themeToggle"
+import LoginButton from "./loginButton"
 
 export const NavBar = () => {
     return <div className="navbar">
@@ -17,6 +18,9 @@ export const NavBar = () => {
                 <ShoppingCart size={32} />
             </Link>
             <ThemeToggle/>
+            <Link>
+                <LoginButton/>
+            </Link>
         </div>
     </div>
 }
