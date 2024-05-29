@@ -4,6 +4,7 @@ import { ShoppingCart } from 'phosphor-react'
 import logo from "../assets/Twhitebackground.png"
 import { ThemeToggle } from "./themeToggle"
 import LoginButton from "./loginButton"
+import LogoutButton from "./logoutButton"
 
 export const NavBar = () => {
     return <div className="navbar">
@@ -20,6 +21,9 @@ export const NavBar = () => {
             <ThemeToggle/>
             <Link>
                 <LoginButton/>
+            </Link>
+            <Link>
+                <LogoutButton/>
             </Link>
         </div>
     </div>
