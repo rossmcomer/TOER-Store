@@ -5,8 +5,11 @@ import logo from "../assets/Twhitebackground.png"
 import { ThemeToggle } from "./themeToggle"
 import LoginButton from "./loginButton"
 import LogoutButton from "./logoutButton"
+import { useAuth0 } from "@auth0/auth0-react"
 
 export const NavBar = () => {
+    const { isAuthenticated } = useAuth0()
+    
     return <div className="navbar">
         <div className="logo">
             <Link to="/">
@@ -14,18 +17,12 @@ export const NavBar = () => {
             </Link>
         </div>
         <div className="links">
-            <Link to="/profile">Profile</Link>
             <Link to="/"> Shop </Link>
             <Link to="/cart"> 
                 <ShoppingCart size={32} />
             </Link>
             <ThemeToggle/>
-            <Link>
-                <LoginButton/>
-            </Link>
-            <Link>
-                <LogoutButton/>
-            </Link>
+            {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
     </div>
 }

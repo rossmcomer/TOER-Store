@@ -8,7 +8,6 @@ import { Success } from './pages/success/success'
 import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
 import { Toaster } from 'react-hot-toast'
-import Profile from './pages/profile';
 
 function App() {  
 
@@ -21,7 +20,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop/>}/>
             <Route path="/cart"element={<Cart/>}/>
-            <Route path="/profile" element={<Profile/>}/>
             <Route path="/success"element={<Success/>}/>
             <Route path="/cancel"element={<Cancel/>}/>
           </Routes>
