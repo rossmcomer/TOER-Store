@@ -8,7 +8,7 @@ import { Success } from './pages/success/success'
 import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
 import { Toaster } from 'react-hot-toast'
-import Profile from './components/profile';
+import Profile from './pages/profile';
 
 function App() {  
 
