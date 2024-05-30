@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { ShoppingCart } from 'phosphor-react'
 import logo from "../assets/Twhitebackground.png"
-import { ThemeToggle } from "./themeToggle"
 import LoginButton from "./loginButton"
 import LogoutButton from "./logoutButton"
 import { useAuth0 } from "@auth0/auth0-react"
