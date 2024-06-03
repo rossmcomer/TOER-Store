@@ -1,0 +1,23 @@
+.paymentStatus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    display:flex;
+    justify-content: space-around;
+}
+
+.paymentStatus button {
+    width: 150px;
+    height: 50px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
