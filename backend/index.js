@@ -10,7 +10,9 @@ app.use(cors())
 app.use(express.json())
 
 const checkoutRouter = require('./controllers/checkout')
+const productsRouter = require('./controllers/products')
 
+app.use('/api/products', productsRouter)
 app.use('/api/create-checkout-session', checkoutRouter)
 
 const errorHandler = (error, req, res, next) => {

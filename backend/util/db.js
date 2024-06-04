@@ -10,8 +10,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
           rejectUnauthorized: false
       }
   }
-}
-  )
+})
 
 const migrationConf = {
   migrations: {

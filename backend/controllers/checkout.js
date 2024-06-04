@@ -1,5 +1,5 @@
-require('dotenv').config()
-const stripe = require('stripe')(process.env.STRIPE_SECRET)
+const { STRIPE_SECRET } = require('../util/config')
+const stripe = require('stripe')(STRIPE_SECRET)
 const router = require('express').Router()
 
 router.post("/",async(req,res)=>{
@@ -14,7 +14,7 @@ router.post("/",async(req,res)=>{
                 name:product.productName,
                 images:[product.productImage]
             },
-            unit_amount:Math.round(product.price*100)
+            unit_amount:product.price
         },
         quantity:product.quantity
     }))
