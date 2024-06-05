@@ -12,70 +12,70 @@
     transition: color 0.3s ease;
   }
   
-  .products {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  .product {
-    border-radius: 15px;
-    width: 300px;
-    height: 350px;
-    margin: 50px 10px;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .product img {
-    width: 300px;
-    border: var(--border);
-    border-radius: 1px;
-    box-shadow: var(--box-shadow-color);
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .product .description {
-    text-align: center;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-  }
+.products {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
-  .product .description p {
-    margin: 5px
-  }
-  
-  .product:hover {
-    transition: .3s ease-in;
-    cursor: pointer;
-  }
-  
-  .addToCartBtn {
-    background-color: var(--background-color);
-    border: var(--border-bold);
-    min-width: 100px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .addToCartBtn:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
-    border: var(--border-bold);
-    cursor: pointer;
-  }
+.product {
+  border-radius: 15px;
+  width: 300px;
+  height: 350px;
+  margin: 50px 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .product-sizes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.product img {
+  width: 300px;
+  border: var(--border);
+  border-radius: 1px;
+  box-shadow: var(--box-shadow-color);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product .description {
+  text-align: center;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.product .description p {
+  margin: 5px
+}
+
+.product:hover {
+  transition: .3s ease-in;
+  cursor: pointer;
+}
+
+.addToCartBtn {
+  background-color: var(--background-color);
+  border: var(--border-bold);
+  min-width: 100px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.addToCartBtn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border: var(--border-bold);
+  cursor: pointer;
+}
+
+.product-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .size-button {
