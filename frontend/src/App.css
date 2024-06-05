@@ -64,7 +64,7 @@ html::before {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   min-width: 344px;
 }
 

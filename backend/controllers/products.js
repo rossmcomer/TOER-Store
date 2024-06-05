@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         include: [
           { model: Category, attributes: ['name'] },
           { model: Supplier, attributes: ['name'] },
-          { model: ProductImage, attributes: ['imageUrl'] }
+          { model: ProductImage, attributes: ['imageUrl'], as: 'images' }
         ]
       })
       res.json(products)

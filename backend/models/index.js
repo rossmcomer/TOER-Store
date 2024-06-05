@@ -8,6 +8,7 @@ const OrderDetail = require('./orderDetail')
 Product.belongsTo(Category, { foreignKey: 'category_id' });
 Product.belongsTo(Supplier, { foreignKey: 'supplier_id' });
 
+Product.hasMany(ProductImage, { foreignKey: 'product_id', as: 'images' })
 ProductImage.belongsTo(Product, { foreignKey: 'product_id' });
 
 OrderDetail.belongsTo(Order, { foreignKey: 'order_id' });

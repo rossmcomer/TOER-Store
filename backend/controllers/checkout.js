@@ -14,7 +14,7 @@ router.post("/",async(req,res)=>{
                 name:product.productName,
                 images:[product.productImage]
             },
-            unit_amount:product.price
+            unit_amount:Math.round(product.price*100)
         },
         quantity:product.quantity
     }))
