@@ -43,7 +43,7 @@ export const ShopContextProvider = (props) => {
             }
             acc[product.name].sizes.push({
                 size: product.size,
-                units_in_stock: product.unitsInStock
+                unitsInStock: product.unitsInStock
             });
             return acc;
         }, {});

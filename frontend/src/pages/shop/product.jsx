@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
 import { ShopContext } from "../../context/shop-context"
-import { Button } from 'react-bootstrap'
 
 export const Product = (props) => {
     const  { id, name, unitPrice, images, sizes } = props.data
@@ -8,17 +7,21 @@ export const Product = (props) => {
   return (
     <div className="product">
         <img src={images[0].imageUrl} alt=""/>
-        <div className="product-sizes">
-            {sizes.map((sizeInfo, index) => (
-                <Button
-                    key={index}
-                    variant={sizeInfo.units_in_stock > 0 ? 'primary' : 'secondary'}
-                    disabled={sizeInfo.units_in_stock === 0}
-                >
-                    {sizeInfo.size} ({sizeInfo.units_in_stock} in stock)
-                </Button>
-            ))}
-        </div>
+        {sizes && sizes.length > 0 && (
+                <div className="product-sizes">
+                    {sizes.map((sizeInfo, index) => (
+                        <label key={index} className="size-button">
+                            <input
+                                type="radio"
+                                name={`size-${name}`}
+                                value={sizeInfo.size}
+                                disabled={sizeInfo.unitsInStock === 0}
+                            />
+                            <span className="size-text">{sizeInfo.size}</span>
+                        </label>
+                    ))}
+                </div>
+            )}
         <div className="description">
             <p><b>{name}</b></p>
             <p>${Math.round(unitPrice)}</p>

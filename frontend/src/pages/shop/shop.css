@@ -71,4 +71,57 @@
     border: var(--border-bold);
     cursor: pointer;
   }
+
+  .product-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.size-button {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-button input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.size-button .size-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 16px;
+    color: #000;
+}
+
+.size-button input:checked + .size-text {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.size-button input:disabled + .size-text {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.size-button:hover .size-text {
+    background-color: #f1f1f1;
+}
+
+.size-button input:disabled:hover .size-text {
+    background-color: #ccc;
+}
   
