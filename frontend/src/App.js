@@ -9,7 +9,7 @@ import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
 import { Toaster } from 'react-hot-toast'
 import { ThemeToggle } from "./components/themeToggle"
-import { Products } from './pages/products'
+import { ProductInfo } from './pages/productInfo/productInfo'
 
 function App() {  
 
@@ -25,7 +25,7 @@ function App() {
             <Route path="/cart"element={<Cart/>}/>
             <Route path="/success"element={<Success/>}/>
             <Route path="/cancel"element={<Cancel/>}/>
-            <Route path="/products"element={<Products/>}/>
+            <Route path="/products/:id"element={<ProductInfo/>}/>
           </Routes>
       </Router>
     </div>

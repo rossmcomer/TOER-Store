@@ -47,7 +47,7 @@ export const ShopContextProvider = (props) => {
             });
             return acc;
         }, {});
-    console.log(Object.values(grouped))
+        console.log(Object.values(grouped))
         return Object.values(grouped);
       };
 

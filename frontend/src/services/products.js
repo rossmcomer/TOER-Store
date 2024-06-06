@@ -7,4 +7,9 @@ const getAll = async () => {
     return request.data
 }
 
-export default { getAll }
+const getOne = async (encodedName) => {
+    const request = await axios.get(`${baseUrl}/${encodedName}`)
+    return request.data
+}
+
+export default { getAll, getOne }
