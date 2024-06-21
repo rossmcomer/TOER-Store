@@ -16,12 +16,14 @@ export const ShopContextProvider = (props) => {
     const [products, setProducts] = useState([])
     const [cartItems, setCartItems] = useState({})
     const [loading, setLoading] = useState(true)
+    const [allProducts, setAllProducts] = useState([])
 
     useEffect(() => {
         const fetchproducts = async () => {
             try {
                 const data = await productService.getAll()
                 const groupedProducts = groupProductsByName(data)
+                setAllProducts(data)
                 setProducts(groupedProducts)
                 setCartItems(getDefaultCart(data))
                 setLoading(false)
@@ -34,7 +36,7 @@ export const ShopContextProvider = (props) => {
     }, [])
 
     const groupProductsByName = (products) => {
-        const grouped = products.reduce((acc, product) => {
+        const groupedProducts = products.reduce((acc, product) => {
             if (!acc[product.name]) {
                 acc[product.name] = {
                     ...product,
@@ -47,8 +49,8 @@ export const ShopContextProvider = (props) => {
             });
             return acc;
         }, {});
-        console.log(Object.values(grouped))
-        return Object.values(grouped);
+        console.log(Object.values(groupedProducts))
+        return Object.values(groupedProducts);
       };
 
     const notify = (message, type) => {
@@ -103,7 +105,7 @@ export const ShopContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: newAmount }))
     }
 
-    const contextValue = { products, loading, cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, getCartDetailed }
+    const contextValue = { products, allProducts, loading, cartItems, addToCart, removeFromCart, updateCartItemCount, getTotalCartAmount, getCartDetailed }
 
   return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
 }
