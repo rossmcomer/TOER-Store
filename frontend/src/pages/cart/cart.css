@@ -11,9 +11,9 @@
 
 .cartItems {
     overflow: auto;
-    max-width: 100%;
+    max-width: 800px;
     max-height: 100%;
-    width: 90%
+    width: 100%
 }
 
 .cartItemsTable {
@@ -21,6 +21,7 @@
     margin: 0px 5px;
     width: calc(100% - 20px);
     box-sizing: border-box;
+    min-width: 350px,
 }
 
 .leftAlign {
@@ -32,11 +33,6 @@
     padding: 8px;
     font-size: 16px;
     border-bottom: var(--border);
-}
-
-.counterContainer {
-    width: 100px;
-    margin: auto;
 }
 
 .cartItemsTable td {
@@ -66,11 +62,16 @@
     justify-content:center;
 }
 
+.counterContainer {
+    width: 100px;
+}
+
 .countHandler {
     width: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 8px
 }
 
 .countHandler button {

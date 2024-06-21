@@ -11,8 +11,8 @@ router.post("/",async(req,res)=>{
         price_data:{
             currency:"usd",
             product_data:{
-                name:product.name,
-                images:[product.images[0].imageUrl]
+                name:`${product.name} (Size: ${product.size})`,
+                images:[product.images[0].imageUrl],
             },
             unit_amount:Math.round(product.unitPrice*100)
         },
