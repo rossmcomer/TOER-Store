@@ -9,7 +9,7 @@ const { connectToDatabase } = require('./util/db')
 app.use(cors())
 app.use(express.json())
 
-const checkoutRouter = require('./controllers/checkout')
+const checkoutRouter = require('./controllers/create-checkout-session')
 const productsRouter = require('./controllers/products')
 
 app.use('/api/products', productsRouter)

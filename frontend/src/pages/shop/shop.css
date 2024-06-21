@@ -12,6 +12,10 @@
     transition: color 0.3s ease;
   }
   
+.shopTitle h1 {
+  margin: 20px 0px;
+}
+
 .products {
   width: 100%;
   height: auto;

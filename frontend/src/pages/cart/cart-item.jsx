@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { ShopContext } from "../../context/shop-context"
 
 export const CartItem = (props) => {
-    const  { id, name, unitPrice, images } = props.data
+    const  { id, name, unitPrice, images, size } = props.data
     const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext)
   
     const quantity = cartItems[id]
@@ -12,9 +12,9 @@ export const CartItem = (props) => {
     <tr className="cartItem">
         <td className="description">
             <img src={images[0].imageUrl} alt={name} className="cartItemImage" />
-            <span className="cartItemName"><b>{name}</b> - ${unitPrice}</span>
+            <div className="cartItemName"><b>{name}</b> - Size {size} - ${unitPrice}</div>
         </td>
-        <td>
+        <td className="counterContainer">
             <div className="countHandler">
                 <button onClick={() => removeFromCart(id)}>
                     -

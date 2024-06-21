@@ -4,7 +4,7 @@ import animationData from '../assets/GreenCheckmark.json';
 
 const PaymentSuccessAnimation = () => {
   const defaultOptions = {
-    loop: true,
+    loop: false,
     autoplay: true,
     animationData: animationData,
     intermission: 5000,
