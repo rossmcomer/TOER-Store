@@ -5,58 +5,60 @@ import productService from '../../services/products'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export const ProductInfo = () => {
-  const { allProducts, cartItems, addToCart } = useContext(ShopContext)
   const location = useLocation()
   const navigate = useNavigate()
+  const { allProducts, cartItems, addToCart } = useContext(ShopContext)
   const product = location.state?.product
-  console.log(product, 'productRendered')
+  const [selectedProduct, setSelectedProduct] = useState(product)
   const availableProducts = allProducts.filter(item => item.name === product.name)
-  console.log(availableProducts, 'availableproducts')
+
+  const handleSizeSelect = (size) => {
+    const product = availableProducts.find(p=> p.size === size )
+    setSelectedProduct(product)
+  }
   return (
     <div className="product-info-container">
       <div className="back-arrow" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </div>
-    <div>{product.name}</div>
-    <div>${Math.round(product.unitPrice)}</div>
-    <div id="image-container">
-        {product.images.map((image, index) => (
-            <img className="productInfoImage"
-                key={index} 
-                src={image.imageUrl} 
-                alt={`Product Image ${index + 1}`} 
-                width={300}
-                height={300}
-            />
-        ))}
-    </div>
-    <div>Available Sizes</div>
-    <div id="sizes-container">
-        {availableProducts.map((product, index) => (
-          <>
-            <button className="productInfoSizeBtn"key={index}>{product.size}</button>
-            <div>Units Available: {product.unitsInStock}</div>
-          </>
-        ))}
-    </div>
-    <button className="addToCartBtn" onClick={() => addToCart(product.id)}>
-            Add To Cart {cartItems[product.id] > 0 && <> ({ cartItems[product.id] })</>}
-        </button>
-    {/* {sizes && sizes.length > 0 && (
-              <div className="product-sizes">
-                  {sizes.map((sizeInfo, index) => (
-                      <label key={index} className="size-button">
-                          <input
-                              type="radio"
-                              name={`size-${name}`}
-                              value={sizeInfo.size}
-                              disabled={sizeInfo.unitsInStock === 0}
-                          />
-                          <span className="size-text">{sizeInfo.size}</span>
-                      </label>
-                  ))}
-              </div>
-          )} */}
+      <div>{product.name}</div>
+      <div>${Math.round(product.unitPrice)}</div>
+      <div id="image-container">
+          {product.images.map((image, index) => (
+              <img className="productInfoImage"
+                  key={index} 
+                  src={image.imageUrl} 
+                  alt={`${index + 1}`} 
+                  width={300}
+                  height={300}
+              />
+          ))}
+      </div>
+      {product.size && (
+      <div>
+        <div>Available Sizes</div>
+        <div id="sizes-container">
+          {availableProducts.map((product, index) => (
+            <div key={index}>
+              <input 
+                  type="radio" 
+                  id={`size-${product.size}`} 
+                  name="productSize" 
+                  value={product.size}
+                  onClick={() => handleSizeSelect(product.size)}
+              />
+              <label htmlFor={`size-${index}`} className="productInfoSizeBtn">
+                  {product.size}
+              </label>
+              <div>Units Available: {product.unitsInStock}</div>
+            </div>
+          ))}
+        </div>  
+      </div>
+      )}
+      <button className="addToCartBtn" onClick={() => addToCart(selectedProduct.id)}>
+        Add To Cart {cartItems[selectedProduct.id] > 0 && <> ({ cartItems[selectedProduct.id] })</>}
+      </button>
     </div>
   )
 }

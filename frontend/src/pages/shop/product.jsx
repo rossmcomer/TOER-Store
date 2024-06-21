@@ -1,10 +1,8 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useNavigate } from 'react-router-dom'
-import { ShopContext } from "../../context/shop-context"
 
 export const Product = (props) => {
-    const  { id, name, unitPrice, images } = props.data
-    const { addToCart, cartItems } = useContext(ShopContext)
+    const  { name, unitPrice, images } = props.data
     const navigate = useNavigate()
 
     const handleImageClick = () => {
@@ -20,8 +18,8 @@ export const Product = (props) => {
             <p><b>{name}</b></p>
             <p>${Math.round(unitPrice)}</p>
         </div>
-        <button className="addToCartBtn" onClick={() => addToCart(id)}>
-            Add To Cart {cartItems[id] > 0 && <> ({ cartItems[id] })</>}
+        <button className="addToCartBtn" onClick={handleImageClick}>
+            View Product
         </button>
     </div>
   )

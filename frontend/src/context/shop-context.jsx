@@ -39,17 +39,11 @@ export const ShopContextProvider = (props) => {
         const groupedProducts = products.reduce((acc, product) => {
             if (!acc[product.name]) {
                 acc[product.name] = {
-                    ...product,
-                    sizes: []
+                    ...product
                 };
             }
-            acc[product.name].sizes.push({
-                size: product.size,
-                unitsInStock: product.unitsInStock
-            });
             return acc;
         }, {});
-        console.log(Object.values(groupedProducts))
         return Object.values(groupedProducts);
       };
 
@@ -63,10 +57,10 @@ export const ShopContextProvider = (props) => {
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
-        for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                let itemInfo = products.find((product) => product.id === Number(item))
-                totalAmount += cartItems[item] * itemInfo.price
+        for (const itemId in cartItems) {
+            if (cartItems[itemId] > 0) {
+                let itemInfo = allProducts.find((product) => product.id === Number(itemId))
+                totalAmount += cartItems[itemId] * itemInfo.unitPrice
             }
         }
 
@@ -77,7 +71,7 @@ export const ShopContextProvider = (props) => {
         let itemInfo = []
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-            let product = products.find((product) => product.id === Number(item))
+            let product = allProducts.find((product) => product.id === Number(item))
             if (product) {
                 product.quantity = cartItems[item]
                 product.totalCost = product.quantity * product.price
@@ -91,13 +85,13 @@ export const ShopContextProvider = (props) => {
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 }))
-        let product = products.find((product) => product.id === itemId)
+        let product = allProducts.find((product) => product.id === itemId)
         notify(`${product.name} successfully added to cart`, 'success')
     }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 }))
-        let product = products.find((product) => product.id === itemId)
+        let product = allProducts.find((product) => product.id === itemId)
         notify(`${product.name} successfully removed from cart`, 'error')
     }
 
