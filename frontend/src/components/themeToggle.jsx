@@ -20,8 +20,9 @@ export const ThemeToggle = () => {
       boxShadowBlack: styles.getPropertyValue("--box-shadow-black").trim(),
       borderBlack: styles.getPropertyValue("--border-black").trim(),
       borderWhite: styles.getPropertyValue("--border-white").trim(),
+      borderGoldenrod: styles.getPropertyValue("--border-goldenrod").trim(),
       borderBoldBlack: styles.getPropertyValue("--border-bold-black").trim(),
-      borderBoldWhite: styles.getPropertyValue("--border-bold-white").trim()
+      borderBoldWhite: styles.getPropertyValue("--border-bold-white").trim(),
     }
 
     updateTheme(isDarkEnabled)
@@ -45,8 +46,9 @@ export const ThemeToggle = () => {
       boxShadowBlack,
       borderBlack,
       borderWhite,
+      borderGoldenrod,
       borderBoldBlack,
-      borderBoldWhite
+      borderBoldWhite,
     } = initialStyles.current;
 
     if (isDarkEnabled) {

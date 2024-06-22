@@ -69,11 +69,11 @@ export const ProductInfo = () => {
             )}
             {selectedProduct.unitsInStock > 0? (
                 <div className="unitsInStock">
-                  <em>({selectedProduct.unitsInStock} in Stock)</em>
+                  <em>In Stock</em>
                 </div>
               ) : (
                 <div className="unitsInStock">
-                  <em>(Out of Stock)</em>
+                  <em>Out of Stock</em>
                 </div>
               )}
             </div>
