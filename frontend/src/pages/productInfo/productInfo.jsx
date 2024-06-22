@@ -12,6 +12,7 @@ export const ProductInfo = () => {
   const [selectedProduct, setSelectedProduct] = useState(product)
   const availableProducts = allProducts.filter(item => item.name === product.name)
 
+  console.log(selectedProduct)
   const handleSizeSelect = (size) => {
     const product = availableProducts.find(p=> p.size === size )
     setSelectedProduct(product)
@@ -50,14 +51,15 @@ export const ProductInfo = () => {
                   <div key={index}>
                     <input 
                         type="radio" 
-                        id={`size-${product.size}`} 
-                        name="productSize" 
+                        id={`${product.size}`} 
+                        name="productSize"
+                        className="productSizeInput"
                         value={product.size}
-                        defaultChecked={index === 0}
-                        onClick={() => handleSizeSelect(product.size)}
+                        checked={product.size === selectedProduct.size}
+                        readOnly={true}
                     />
-                    <label htmlFor={`size-${index}`} className="productInfoSizeBtn">
-                        {product.size}
+                    <label htmlFor={`size-${index}`} onClick={() => handleSizeSelect(product.size)}>
+                      <span>{product.size}</span>
                     </label>
                   </div>
                 ))}
