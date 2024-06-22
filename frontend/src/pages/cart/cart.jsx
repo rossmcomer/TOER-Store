@@ -60,7 +60,7 @@ export const Cart = () => {
                 </table>
             </div>
             <div className="checkout">
-                <p> <b>Total: ${totalAmount}</b></p>
+                <p> <b>Total: ${totalAmount} (Taxes not included)</b></p>
                 <div className="buttonContainer">
                 <button onClick={() => navigate("/")}> Continue Shopping </button>
                 <button onClick={makePayment}> Checkout </button>

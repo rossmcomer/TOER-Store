@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
-        <Toaster />
         <ThemeToggle/>
+        <Toaster />
           <Routes>
             <Route path="/" element={<Shop/>}/>
             <Route path="/cart"element={<Cart/>}/>

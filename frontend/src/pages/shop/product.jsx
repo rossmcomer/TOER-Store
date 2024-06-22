@@ -14,13 +14,13 @@ export const Product = (props) => {
       <div className="product-image-container" onClick={handleImageClick}>
         <img src={images[0].imageUrl} alt=""/>
       </div>
-        <div className="description">
-            <p><b>{name}</b></p>
-            <p>${Math.round(unitPrice)}</p>
-        </div>
-        <button className="addToCartBtn" onClick={handleImageClick}>
-            View Product
-        </button>
+      <div className="description">
+          <p><b>{name}</b></p>
+          <p>${Math.round(unitPrice)}</p>
+      </div>
+      <button className="addToCartBtn" onClick={handleImageClick}>
+          View Product
+      </button>
     </div>
   )
 }
