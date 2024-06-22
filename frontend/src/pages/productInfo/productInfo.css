@@ -58,6 +58,10 @@
     width: 200px;
 }
 
+.addToCartBtn {
+    margin-top: 5px;
+}
+
 .sizes-subContainer {
     display:flex;
     flex-direction: column;
