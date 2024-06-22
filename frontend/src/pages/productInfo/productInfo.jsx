@@ -12,7 +12,6 @@ export const ProductInfo = () => {
   const [selectedProduct, setSelectedProduct] = useState(product)
   const availableProducts = allProducts.filter(item => item.name === product.name)
 
-  console.log(selectedProduct)
   const handleSizeSelect = (size) => {
     const product = availableProducts.find(p=> p.size === size )
     setSelectedProduct(product)

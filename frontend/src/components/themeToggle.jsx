@@ -46,7 +46,6 @@ export const ThemeToggle = () => {
       boxShadowBlack,
       borderBlack,
       borderWhite,
-      borderGoldenrod,
       borderBoldBlack,
       borderBoldWhite,
     } = initialStyles.current;

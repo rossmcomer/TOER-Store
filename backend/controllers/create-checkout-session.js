@@ -5,13 +5,11 @@ const router = require('express').Router()
 router.post("/",async(req,res)=>{
     const {products} = req.body
 
-    console.log(products, 'products')
-
     const lineItems = products.map((product)=>({
         price_data:{
             currency:"usd",
             product_data:{
-                name:`${product.name} (Size: ${product.size})`,
+                name: product.size ? `${product.name} (Size: ${product.size})` : product.name,
                 images:[product.images[0].imageUrl],
             },
             unit_amount:Math.round(product.unitPrice*100)
