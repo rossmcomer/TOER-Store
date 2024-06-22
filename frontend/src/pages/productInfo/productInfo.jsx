@@ -40,11 +40,11 @@ export const ProductInfo = () => {
                   />
               ))}
           </div>
-          {product.size && (
           <div className="sizes-container">
             <button className="addToCartBtn" onClick={() => addToCart(selectedProduct.id)}>
               Add To Cart {cartItems[selectedProduct.id] > 0 && <> ({ cartItems[selectedProduct.id] })</>}
             </button>
+            {product.size && (
             <div className='sizes-subContainer'>
               <div className='btnContainer'>
                 {availableProducts.map((product, index) => (
@@ -64,17 +64,21 @@ export const ProductInfo = () => {
                   </div>
                 ))}
               </div>
-              {selectedProduct && (
+            </div>
+            )}
+            {selectedProduct.unitsInStock > 0? (
                 <div className="unitsInStock">
-                <em>({selectedProduct.unitsInStock} in Stock)</em>
+                  <em>({selectedProduct.unitsInStock} in Stock)</em>
+                </div>
+              ) : (
+                <div className="unitsInStock">
+                  <em>(Out of Stock)</em>
                 </div>
               )}
-            </div>
             <div className="productInfoPrice">
               <div>${Math.round(selectedProduct.unitPrice)}</div>
             </div>
           </div>
-          )}
           </div>
         </div>
       </div>
