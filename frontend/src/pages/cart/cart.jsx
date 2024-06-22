@@ -4,6 +4,7 @@ import { CartItem } from "./cart-item"
 import "./cart.css"
 import { useNavigate } from "react-router-dom"
 import { loadStripe } from "@stripe/stripe-js"
+import checkoutService from '../../services/checkout.js'
 
 export const Cart = () => {
     const { allProducts, cartItems, getTotalCartAmount, getCartDetailed } = useContext(ShopContext)
@@ -20,21 +21,7 @@ export const Cart = () => {
             products: cartDetailed
         }
 
-        const headers = {
-            'Content-Type': 'application/json',
-        }
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/create-checkout-session`, {
-            method:"POST",
-            headers:headers,
-            body:JSON.stringify(body)
-        })
-
-        if (!response.ok) {
-            console.error('HTTP error:', response.status, response.statusText);
-            throw new Error('Network response was not ok');
-        }
-        
-        const session = await response.json()
+        const session = await checkoutService.checkout(body)
 
         const result = stripe.redirectToCheckout({
             sessionId:session.id
