@@ -44,6 +44,7 @@ export const ProductInfo = () => {
             <button className="addToCartBtn" onClick={() => addToCart(selectedProduct.id)}>
               Add To Cart {cartItems[selectedProduct.id] > 0 && <> ({ cartItems[selectedProduct.id] })</>}
             </button>
+            <div>
             {product.size && (
             <div className='sizes-subContainer'>
               <div className='btnContainer'>
@@ -75,6 +76,7 @@ export const ProductInfo = () => {
                   <em>(Out of Stock)</em>
                 </div>
               )}
+            </div>
             <div className="productInfoPrice">
               <div>${Math.round(selectedProduct.unitPrice)}</div>
             </div>
