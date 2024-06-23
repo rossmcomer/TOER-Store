@@ -1,4 +1,4 @@
-const { STRIPE_SECRET } = require('../util/config')
+const { STRIPE_SECRET, DOMAIN_IP } = require('../util/config')
 const stripe = require('stripe')(STRIPE_SECRET)
 const router = require('express').Router()
 
@@ -24,8 +24,8 @@ router.post("/",async(req,res)=>{
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: "payment",
-            success_url: "http://localhost:3000/success",
-            cancel_url: "http://localhost:3000/cancel",
+            success_url: `${DOMAIN_IP}/success`,
+            cancel_url: `${DOMAIN_IP}/cancel`,
             automatic_tax: { enabled: true },
         });
 

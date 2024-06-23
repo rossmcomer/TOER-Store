@@ -86,13 +86,13 @@ export const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 }))
         let product = allProducts.find((product) => product.id === itemId)
-        notify(`${product.name} successfully added to cart`, 'success')
+        notify( product.size ? `${product.name} (Size: ${product.size}) successfully added to cart` : `${product.name} successfully added to cart`, 'success')
     }
 
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 }))
         let product = allProducts.find((product) => product.id === itemId)
-        notify(`${product.name} successfully removed from cart`, 'error')
+        notify( product.size ? `${product.name} (Size: ${product.size}) successfully removed from cart` : `${product.name} successfully removed from cart`, 'error')
     }
 
     const updateCartItemCount = (newAmount, itemId) => {
