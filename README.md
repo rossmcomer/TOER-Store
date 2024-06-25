@@ -14,6 +14,6 @@ In the cart page you can modify the quantity of each item in your cart.  You can
 
 Click the "Checkout" button and you will be redirected to the Stripe payments page.  The items in your cart will be listed on the Stripe checkout page.
 
-To simulate a successful payment, use credit card number "4242424242424242".
+To simulate a successful payment, use credit card number "4242424242424242".  After payment is confirmed you will be redirected to the success page.
 
-To simulate a declined payment, use credit card number "4000000000009995".
+To simulate a declined payment, use credit card number "4000000000009995".  After payment is declined you will be redirected to the payment cancelled page.
