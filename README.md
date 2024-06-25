@@ -1,6 +1,7 @@
 HOW TO DEMO THIS APP
 
 Start by signing up with the integrated Auth0 PaaS.  Click "Sign-in" in the navbar at the top right of the screen.  This will take you to the Auth0 sign-up page.
+You can sign in with any e-mail address, google account, or facebook account.
 
 After you have created an account you will automaticaly be returned to the home page.  The "Sign-in" button should now say "Sign-out."
 
