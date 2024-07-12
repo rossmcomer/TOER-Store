@@ -11,7 +11,7 @@
 
 .cartItems {
     overflow: auto;
-    max-width: 800px;
+    max-width: 700px;
     max-height: 100%;
     width: 100%
 }
@@ -26,6 +26,12 @@
 
 .leftAlign {
     text-align:left;
+    width: 80%;
+}
+
+.quantity {
+    width: 40px;
+    padding-left: 10px;
 }
 
 .cartItemsTable th {
@@ -63,15 +69,15 @@
 }
 
 .counterContainer {
-    width: 100px;
+    width: 40px;
 }
 
 .countHandler {
-    width: 40px;
+    width: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-left: 8px
+    justify-content: space-around;
+    margin-right: 3px;
 }
 
 .countHandler button {

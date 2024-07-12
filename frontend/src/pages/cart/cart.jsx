@@ -44,7 +44,7 @@ export const Cart = () => {
                 <thead>
                     <tr>
                         <th className="leftAlign">Product</th>
-                        <th>Quantity</th>
+                        <th className="quantity">Quantity</th>
                         <th>Subtotal</th>
                     </tr>
                 </thead>

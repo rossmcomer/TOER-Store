@@ -1,14 +1,23 @@
-HOW TO DEMO THIS APP
+# TOER Store
+## E-commerce app integrated with Stripe for payments and Auth0 for SSO
+
+Visit the app at https://trackstarapp.com
+
+### HOW TO USE SIGN UP WITH AUTH0/OKTA
 
 Start by signing up with the integrated Auth0 SaaS.  Click "Sign-in" in the navbar at the top right of the screen.  This will take you to the Auth0 sign-up page.
 You can sign in with any e-mail address, google account, or facebook account.
 
 After you have created an account you will automaticaly be returned to the home page.  The "Sign-in" button should now say "Sign-out."
 
+### SHOPPING
+
 You can view different products by clicking the image of the product or the "View Product" button.  Select a size if applicable and then click "Add to Cart" button.
 You will see notifications tell you what you added to the cart each time.
 
 Once you have selected a few products click the cart button at the top of the screen.
+
+### CHECKOUT
 
 In the cart page you can modify the quantity of each item in your cart.  You can click the "Continue Shopping" button to return to the main page or "Checkout" button to checkout.
 

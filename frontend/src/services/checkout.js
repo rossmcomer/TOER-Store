@@ -1,5 +1,5 @@
 import axios from '../util/apiClient'
-const baseUrl = '/api/create-checkout-session'
+const baseUrl = '/create-checkout-session'
 
 const checkout = async (body) => {
     const headers = {

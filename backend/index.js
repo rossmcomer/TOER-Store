@@ -12,8 +12,8 @@ app.use(express.json())
 const checkoutRouter = require('./controllers/create-checkout-session')
 const productsRouter = require('./controllers/products')
 
-app.use('/products', productsRouter)
-app.use('/create-checkout-session', checkoutRouter)
+app.use('/api/products', productsRouter)
+app.use('/api/create-checkout-session', checkoutRouter)
 
 const errorHandler = (error, req, res, next) => {
     console.error(error.message)
