@@ -17,3 +17,5 @@ Click the "Checkout" button and you will be redirected to the Stripe payments pa
 To simulate a successful payment, use credit card number "4242424242424242".  After payment is confirmed you will be redirected to the success page.
 
 To simulate a declined payment, use credit card number "4000000000009995".  After payment is declined you will be redirected to the payment cancelled page.
+
+Thank you for using my app!
