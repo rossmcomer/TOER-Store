@@ -10,7 +10,7 @@
   --border-bold: 2px solid #131313;
   --border-bold-black: 2px solid #131313;
   --border-bold-white: 2px solid #ffffff;
-	--transition: 0.5s ease;
+  --transition: 0.5s ease;
 }
 
 .App {
@@ -22,7 +22,8 @@
   z-index: 1;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -41,7 +42,7 @@ html {
 }
 
 html::before {
-  content: "";
+  content: '';
   position: fixed;
   height: 100%;
   width: 100%;
@@ -60,7 +61,7 @@ html::before {
 .navbar {
   width: 100%;
   height: 80px;
-  background-color:goldenrod;
+  background-color: goldenrod;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,11 +133,11 @@ html::before {
   position: absolute;
   margin: auto;
   cursor: pointer;
-	transition: background var(--transition);
+  transition: background var(--transition);
 }
 
 .toggle::before {
-  content: "";
+  content: '';
   display: block;
   height: 25px;
   width: 25px;
@@ -146,7 +147,9 @@ html::before {
   z-index: 2;
   transform: translate(0);
   background: var(--background-color);
-	transition: transform var(--transition), background var(--transition);
+  transition:
+    transform var(--transition),
+    background var(--transition);
 }
 
 .toggle.enabled::before {
@@ -155,8 +158,8 @@ html::before {
 }
 
 .toggle input {
-	position: absolute;
-	top: 0;
+  position: absolute;
+  top: 0;
   opacity: 0;
 }
 
@@ -178,7 +181,8 @@ html::before {
 
 /* loginBtn starts */
 
-#loginBtn, #logoutBtn {
+#loginBtn,
+#logoutBtn {
   font-size: 14px;
   margin-right: 20px;
 }

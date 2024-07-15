@@ -5,11 +5,11 @@ const { Umzug, SequelizeStorage } = require('umzug')
 const sequelize = new Sequelize(DATABASE_URL, {
   dialect: 'postgres',
   dialectOptions: {
-      ssl: {
-          require: true,
-          rejectUnauthorized: false
-      }
-  }
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
 })
 
 const migrationConf = {

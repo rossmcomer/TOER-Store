@@ -1,6 +1,6 @@
-import React from 'react';
-import Lottie from 'react-lottie';
-import animationData from '../assets/RedCanceled.json';
+import React from 'react'
+import Lottie from 'react-lottie'
+import animationData from '../assets/RedCanceled.json'
 
 const PaymentCanceledAnimation = () => {
   const defaultOptions = {
@@ -8,11 +8,11 @@ const PaymentCanceledAnimation = () => {
     autoplay: true,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   }
 
-  return <Lottie options={defaultOptions} height={400} width={400} />;
-};
+  return <Lottie options={defaultOptions} height={400} width={400} />
+}
 
-export default PaymentCanceledAnimation;
+export default PaymentCanceledAnimation

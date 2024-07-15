@@ -16,14 +16,14 @@ app.use('/products', productsRouter)
 app.use('/create-checkout-session', checkoutRouter)
 
 const errorHandler = (error, req, res, next) => {
-    console.error(error.message)
-  
-    if (error) {
-      return res.status(400).send({ error: 'something went wrong' })
-    }
-    next(error)
+  console.error(error.message)
+
+  if (error) {
+    return res.status(400).send({ error: 'something went wrong' })
   }
-  
+  next(error)
+}
+
 app.use(errorHandler)
 
 const start = async () => {
@@ -34,4 +34,3 @@ const start = async () => {
 }
 
 start()
-  

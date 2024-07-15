@@ -1,6 +1,6 @@
-import React from 'react';
-import Lottie from 'react-lottie';
-import animationData from '../assets/GreenCheckmark.json';
+import React from 'react'
+import Lottie from 'react-lottie'
+import animationData from '../assets/GreenCheckmark.json'
 
 const PaymentSuccessAnimation = () => {
   const defaultOptions = {
@@ -9,11 +9,11 @@ const PaymentSuccessAnimation = () => {
     animationData: animationData,
     intermission: 5000,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  }
 
-  return <Lottie options={defaultOptions} height={400} width={400} />;
-};
+  return <Lottie options={defaultOptions} height={400} width={400} />
+}
 
-export default PaymentSuccessAnimation;
+export default PaymentSuccessAnimation

@@ -1,7 +1,7 @@
 import React from 'react'
 import PaymentSuccessAnimation from '../../components/paymentSuccessAnimation'
-import "./success.css"
-import { useNavigate } from "react-router-dom"
+import './success.css'
+import { useNavigate } from 'react-router-dom'
 
 export const Success = () => {
   const navigate = useNavigate()
@@ -10,7 +10,7 @@ export const Success = () => {
       <PaymentSuccessAnimation />
       <div>Payment Successful!</div>
       <div className="buttonContainer">
-          <button onClick={() => navigate("/")}> Continue Shopping </button>
+        <button onClick={() => navigate('/')}> Continue Shopping </button>
       </div>
     </div>
   )
