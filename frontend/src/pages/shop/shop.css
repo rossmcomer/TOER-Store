@@ -39,7 +39,7 @@
 .product img {
   width: 300px;
   border: var(--border);
-  border-radius: 1px;
+  border-radius: 4px;
   box-shadow: var(--box-shadow-color);
   transition:
     border 0.3s ease,
@@ -54,6 +54,7 @@
 
 .product .description p {
   margin: 5px;
+  font-size: 20px;
 }
 
 .product:hover {
@@ -62,12 +63,14 @@
 }
 
 .addToCartBtn {
+  font-family: 'Event Horizon Medium';
   background-color: var(--background-color);
   border: var(--border-bold);
   min-width: 100px;
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--text-color);
+  box-shadow: var(--box-shadow-color);
   transition:
     background-color 0.3s ease,
     color 0.3s ease,

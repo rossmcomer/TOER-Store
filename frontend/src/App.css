@@ -8,14 +8,14 @@
 :root {
   --black: #131313;
   --white: #f5f5f5;
-  --box-shadow-color: 0px 3px 15px #00000033;
-  --box-shadow-black: 0px 3px 15px #00000033;
-  --border: 1px solid #131313;
-  --border-black: 1px solid #131313;
+  --box-shadow-color: 5px 5px 30px #00000010;
+  --box-shadow-black: 5px 5px 30px #00000010;
+  --border: 1px solid #1313137c;
+  --border-black: 1px solid #1313137c;
   --border-white: 1px solid white;
   --border-goldenrod: 2px solid goldenrod;
-  --border-bold: 2px solid #131313;
-  --border-bold-black: 2px solid #131313;
+  --border-bold: 2px solid #1313137c;
+  --border-bold-black: 2px solid #1313137c;
   --border-bold-white: 2px solid #ffffff;
   --transition: 0.5s ease;
 }
