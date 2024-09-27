@@ -38,8 +38,8 @@
 
 .product img {
   width: 300px;
-  border: var(--border);
   border-radius: 4px;
+  /* border: var(--border-bold); */
   box-shadow: var(--box-shadow-color);
   transition:
     border 0.3s ease,
