@@ -59,7 +59,7 @@ export const ProductInfo = () => {
                     <div className="sizes-subContainer">
                       <div className="btnContainer">
                         {availableProducts.map((product, index) => (
-                          <div key={index}>
+                          <div key={index} className="productSizeContainer">
                             <input
                               type="radio"
                               id={`${product.size}`}
