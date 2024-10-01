@@ -46,8 +46,8 @@ export const Cart = () => {
                 <tr className="headerRow">
                   <th className="productHeader">Product</th>
                   <th className="qtySubtotalWrap">
-                    <div className="quantity">Quantity</div>
-                    <div className="subtotal">Subtotal</div>
+                    <div className="quantity">Qty</div>
+                    <div className="subtotal">$</div>
                   </th>
                 </tr>
               </thead>

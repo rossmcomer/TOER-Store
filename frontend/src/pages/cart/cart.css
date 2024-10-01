@@ -19,6 +19,7 @@
 
 .cartItemsTable {
   border-collapse: collapse;
+  table-layout: fixed;
   margin: 0px 5px;
   width: calc(100% - 20px);
   box-sizing: border-box;
@@ -37,6 +38,10 @@
   width: 100%
 }
 
+thead {
+  width: 100%
+}
+
 .headerRow {
   color: var(--text-color);
   padding: 8px;
@@ -46,14 +51,11 @@
   align-items: center;
 }
 
-.headerRow th {
-  padding: 0px 8px;
-}
-
 .qtySubtotalWrap {
   display:flex;
   justify-content: space-between;
-  flex-basis: 33.33%
+  flex-basis: 33.33%;
+  min-width: 150px
 }
 
 .quantity, .subtotal {
@@ -91,7 +93,8 @@
 .counterContainer {
   display:flex;
   justify-content: space-between;
-  flex-basis: 33.33%
+  flex-basis: 33.33%;
+  min-width: 150px
 }
 
 .countHandler {
