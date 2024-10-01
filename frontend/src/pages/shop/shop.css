@@ -62,6 +62,7 @@
 .product .description p {
   margin: 5px;
   font-size: 20px;
+  text-shadow: 10px 10px 20px #00000017;
 }
 
 .product:hover {

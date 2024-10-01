@@ -17,6 +17,7 @@ export const ThemeToggle = () => {
     initialStyles.current = {
       black: styles.getPropertyValue('--black').trim(),
       white: styles.getPropertyValue('--white').trim(),
+      grey: styles.getPropertyValue('--grey').trim(),
       boxShadowBlack: styles.getPropertyValue('--box-shadow-black').trim(),
       borderBlack: styles.getPropertyValue('--border-black').trim(),
       borderWhite: styles.getPropertyValue('--border-white').trim(),
@@ -43,6 +44,7 @@ export const ThemeToggle = () => {
     const {
       black,
       white,
+      grey,
       boxShadowBlack,
       borderBlack,
       borderWhite,
