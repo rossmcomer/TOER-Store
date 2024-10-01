@@ -82,7 +82,7 @@ thead {
   margin: 8px;
   margin-left: 0px;
   border: var(--border);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .cartItemprice {
