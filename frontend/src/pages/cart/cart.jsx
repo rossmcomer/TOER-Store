@@ -43,10 +43,12 @@ export const Cart = () => {
           <div className="cartItems">
             <table className="cartItemsTable">
               <thead>
-                <tr>
-                  <th className="leftAlign">Product</th>
-                  <th className="quantity">Quantity</th>
-                  <th>Subtotal</th>
+                <tr className="headerRow">
+                  <th className="productHeader">Product</th>
+                  <th className="qtySubtotalWrap">
+                    <div className="quantity">Quantity</div>
+                    <div className="subtotal">Subtotal</div>
+                  </th>
                 </tr>
               </thead>
               <tbody>

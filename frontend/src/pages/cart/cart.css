@@ -12,8 +12,9 @@
 .cartItems {
   overflow: auto;
   max-width: 700px;
-  max-height: 100%;
   width: 100%;
+  display:flex;
+  justify-content: center;
 }
 
 .cartItemsTable {
@@ -24,21 +25,34 @@
   min-width: 350px;
 }
 
-.leftAlign {
+.productHeader {
   text-align: left;
-  width: 80%;
+  flex-basis: 66.67%
 }
 
-.quantity {
-  width: 40px;
-  padding-left: 10px;
+.cartItem {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%
 }
 
-.cartItemsTable th {
+.headerRow {
   color: var(--text-color);
   padding: 8px;
-  font-size: 16px;
+  font-size: 18px;
   border-bottom: var(--border);
+  display:flex;
+}
+
+.headerRow th {
+  padding: 0px 8px;
+}
+
+.qtySubtotalWrap {
+  display:flex;
+  justify-content: space-between;
+  flex-basis: 33.33%
 }
 
 .cartItemsTable td {
@@ -48,12 +62,13 @@
 }
 
 .cartItem .description {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   text-align: left;
   width: 80%;
+  flex-basis: 66.67%
 }
 
 .cartItem img {
@@ -69,15 +84,16 @@
 }
 
 .counterContainer {
-  width: 40px;
+  display:flex;
+  justify-content: space-between;
+  flex-basis: 33.33%
 }
 
 .countHandler {
   width: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-right: 3px;
+  justify-content: center;
 }
 
 .countHandler button {
@@ -97,10 +113,14 @@
   width: 30px;
   text-align: center;
   margin: 0 5px;
+  font-family: 'Event Horizon Medium';
 }
 
 .cartItemSubtotal {
   font-weight: bolder;
+  padding: 0px 8px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .buttonContainer {

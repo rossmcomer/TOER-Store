@@ -32,8 +32,9 @@ export const CartItem = (props) => {
           />
           <button onClick={() => addToCart(id)}>+</button>
         </div>
+      
+      <div className="cartItemSubtotal">${subtotal}</div>
       </td>
-      <td className="cartItemSubtotal">${subtotal}</td>
     </tr>
   )
 }
