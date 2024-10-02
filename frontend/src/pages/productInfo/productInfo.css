@@ -58,7 +58,7 @@
 }
 
 .addToCartBtn {
-  margin-top: 5px; 
+  margin-top: 5px;
 }
 
 .sizes-subContainer {
@@ -117,10 +117,10 @@ input[type='radio'] + label span {
   padding-top: 6px;
   box-shadow: var(--box-shadow-color);
   transition:
-  transform 0.3s ease-in-out,
-  background-color 0.3s ease,
-  border 0.3s ease,
-  box-shadow 0.3s ease;
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 input[type='radio']:checked + label span {

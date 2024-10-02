@@ -2,7 +2,9 @@
   font-family: 'Event Horizon Medium';
   font-style: normal;
   font-weight: normal;
-  src: local('Event Horizon Medium'), url('./assets/Fonts/Event\ Horizon.woff') format('woff');
+  src:
+    local('Event Horizon Medium'),
+    url('./assets/Fonts/Event\ Horizon.woff') format('woff');
 }
 
 @font-face {
@@ -91,7 +93,7 @@ html::before {
 .links {
   display: flex;
   align-items: center;
-  margin-right: 10px
+  margin-right: 10px;
 }
 
 .links a {
@@ -109,7 +111,7 @@ html::before {
 .navbar .logo img {
   height: 70px;
   transition: transform 0.3s ease;
-  margin-left: 10px
+  margin-left: 10px;
 }
 
 .navbar .logo img:hover {

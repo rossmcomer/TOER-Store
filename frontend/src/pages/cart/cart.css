@@ -13,7 +13,7 @@
   overflow: auto;
   max-width: 700px;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
@@ -28,18 +28,18 @@
 
 .productHeader {
   text-align: left;
-  flex-basis: 66.67%
+  flex-basis: 66.67%;
 }
 
 .cartItem {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%
+  width: 100%;
 }
 
 thead {
-  width: 100%
+  width: 100%;
 }
 
 .headerRow {
@@ -47,18 +47,19 @@ thead {
   padding: 8px;
   font-size: 18px;
   border-bottom: var(--border);
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
 .qtySubtotalWrap {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-basis: 33.33%;
-  min-width: 150px
+  min-width: 150px;
 }
 
-.quantity, .subtotal {
+.quantity,
+.subtotal {
   flex-basis: 50%;
 }
 
@@ -74,7 +75,7 @@ thead {
   justify-content: flex-start;
   text-align: left;
   width: 80%;
-  flex-basis: 66.67%
+  flex-basis: 66.67%;
 }
 
 .cartItem img {
@@ -90,10 +91,10 @@ thead {
 }
 
 .counterContainer {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-basis: 33.33%;
-  min-width: 150px
+  min-width: 150px;
 }
 
 .countHandler {
@@ -161,7 +162,8 @@ thead {
   border: var(--border-bold);
 }
 
-.total, .taxesNotIncluded {
+.total,
+.taxesNotIncluded {
   margin: 15px 2px;
 }
 
@@ -171,11 +173,11 @@ thead {
 }
 
 .taxesNotIncluded {
-  font-size:smaller;
+  font-size: smaller;
 }
 
 .cartTotal {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
