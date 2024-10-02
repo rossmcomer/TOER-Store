@@ -161,7 +161,17 @@ thead {
   border: var(--border-bold);
 }
 
-.checkout p {
+.total {
   text-align: center;
   font-size: larger;
+}
+
+.taxesNotIncluded {
+  font-size:smaller;
+}
+
+.cartTotal {
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }

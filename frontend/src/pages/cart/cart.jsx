@@ -63,10 +63,10 @@ export const Cart = () => {
             </table>
           </div>
           <div className="checkout">
-            <p>
-              {' '}
-              <b>Total: ${totalAmount} (Taxes not included)</b>
-            </p>
+            <div className='cartTotal'>
+              <p className='total'><b>Total: ${totalAmount}</b></p>
+              <p className='taxesNotIncluded'>(Taxes not included)</p>
+            </div>
             <div className="buttonContainer">
               <button onClick={() => navigate('/')}> Continue Shopping </button>
               <button onClick={makePayment}> Checkout </button>
