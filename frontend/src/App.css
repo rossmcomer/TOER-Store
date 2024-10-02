@@ -90,6 +90,23 @@ html::before {
   transition: border-color var(--transition);
 }
 
+.cartIconWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cartItemsCount {
+  font-family: 'Event Horizon Medium';
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
 .links {
   display: flex;
   align-items: center;
