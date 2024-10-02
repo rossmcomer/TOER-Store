@@ -64,7 +64,8 @@ export const Cart = () => {
           </div>
           <div className="checkout">
             <div className='cartTotal'>
-              <p className='total'><b>Total: ${totalAmount}</b></p>
+              <p className='total'><b>Total: ${totalAmount} </b></p>
+              {' '}
               <p className='taxesNotIncluded'>(Taxes not included)</p>
             </div>
             <div className="buttonContainer">

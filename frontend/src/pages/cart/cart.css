@@ -161,6 +161,10 @@ thead {
   border: var(--border-bold);
 }
 
+.total, .taxesNotIncluded {
+  margin: 15px 2px;
+}
+
 .total {
   text-align: center;
   font-size: larger;
