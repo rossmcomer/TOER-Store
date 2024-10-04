@@ -11,6 +11,7 @@
 }
 
 .paymentStatus button {
+  font-family: 'Event Horizon Medium';
   width: 150px;
   height: 50px;
   background-color: var(--text-color);
@@ -19,5 +20,5 @@
   border-radius: 8px;
   margin: 10px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
