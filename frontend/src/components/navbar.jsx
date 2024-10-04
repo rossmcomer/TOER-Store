@@ -23,7 +23,7 @@ export const NavBar = () => {
           <div className="cartIconWrapper">
             <ShoppingCart size={32} />
             {getCartItemsCount() > 0 && (
-            <span className="cartItemsCount">{getCartItemsCount()}</span>
+              <span className="cartItemsCount">{getCartItemsCount()}</span>
             )}
           </div>
         </Link>

@@ -141,7 +141,7 @@ export const ShopContextProvider = (props) => {
     updateCartItemCount,
     getTotalCartAmount,
     getCartItemsCount,
-    getCartDetailed
+    getCartDetailed,
   }
 
   return (

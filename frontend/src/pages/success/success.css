@@ -20,5 +20,7 @@
   border-radius: 8px;
   margin: 10px;
   cursor: pointer;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
 }
