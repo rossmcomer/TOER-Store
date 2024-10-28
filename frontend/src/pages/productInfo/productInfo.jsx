@@ -29,6 +29,7 @@ export const ProductInfo = () => {
             <div className="description">
               <p>
                 <b>{product.name}</b>
+                {/* <p className=''>{product.description}</p> */}
               </p>
             </div>
             <div className="image-and-sizes">
