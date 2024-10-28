@@ -3,7 +3,7 @@ import { ReactComponent as MoonIcon } from '../assets/moon.svg'
 import { ReactComponent as SunIcon } from '../assets/sun.svg'
 
 export const ThemeToggle = () => {
-  const [isEnabled, setIsEnabled] = useState(true)
+  const [isEnabled, setIsEnabled] = useState(false)
   const initialStyles = useRef({})
 
   useEffect(() => {
