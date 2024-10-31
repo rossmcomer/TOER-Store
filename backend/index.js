@@ -11,11 +11,11 @@ app.use(express.json())
 
 const checkoutRouter = require('./controllers/create-checkout-session')
 const productsRouter = require('./controllers/products')
-const saveOrderInfoRouter = require('./controllers/save-order-info')
+const saveOrderInfoRouter = require('./controllers/stripe-webhook').default
 
 app.use('/api/products', productsRouter)
 app.use('/api/create-checkout-session', checkoutRouter)
-app.use('/api/save-order-info', saveOrderInfoRouter)
+app.use('/api/stripe-webhook', saveOrderInfoRouter)
 
 const errorHandler = (error, req, res, next) => {
   console.error(error.message)
