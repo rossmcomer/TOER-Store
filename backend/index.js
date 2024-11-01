@@ -11,7 +11,7 @@ app.use(express.json())
 
 const checkoutRouter = require('./controllers/create-checkout-session')
 const productsRouter = require('./controllers/products')
-const saveOrderInfoRouter = require('./controllers/stripe-webhook').default
+const saveOrderInfoRouter = require('./controllers/stripe-webhook')
 
 app.use('/api/products', productsRouter)
 app.use('/api/create-checkout-session', checkoutRouter)
