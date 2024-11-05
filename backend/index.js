@@ -9,7 +9,11 @@ const { connectToDatabase } = require('./util/db')
 app.use(cors())
 
 const saveOrderInfoRouter = require('./controllers/stripe-webhook')
-app.use('/api/stripe-webhook', express.raw({ type: 'application/json' }), saveOrderInfoRouter)
+app.use(
+  '/api/stripe-webhook',
+  express.raw({ type: 'application/json' }),
+  saveOrderInfoRouter,
+)
 
 app.use(express.json())
 
