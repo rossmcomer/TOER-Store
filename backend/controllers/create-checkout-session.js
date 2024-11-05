@@ -19,8 +19,6 @@ router.post('/', async (req, res) => {
     quantity: product.quantity,
   }))
 
-  console.log(lineItems, 'lineItems')
-
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -31,7 +29,6 @@ router.post('/', async (req, res) => {
       automatic_tax: { enabled: true },
     })
 
-    console.log(session, 'session')
     res.json({ id: session.id })
   } catch (error) {
     console.error('Error creating checkout session:', error)
