@@ -8,7 +8,7 @@ export const Cancel = () => {
   return (
     <div className="paymentStatus">
       <PaymentCanceledAnimation />
-      <div>Payment Canceled!</div>
+      <div className="paymentNotification">Payment Canceled!</div>
       <div className="buttonContainer">
         <button onClick={() => navigate('/')}> Continue Shopping </button>
       </div>

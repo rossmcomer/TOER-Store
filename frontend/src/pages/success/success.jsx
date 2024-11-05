@@ -8,7 +8,7 @@ export const Success = () => {
   return (
     <div className="paymentStatus">
       <PaymentSuccessAnimation />
-      <div className='paymentSuccessful'>Payment Successful!</div>
+      <div className='paymentNotification'>Payment Successful!</div>
       <div className="buttonContainer">
         <button onClick={() => navigate('/')}> Continue Shopping </button>
       </div>

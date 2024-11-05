@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.paymentNotification {
+  margin-bottom: 10px;
+}
+
 .buttonContainer {
   display: flex;
   justify-content: space-around;
