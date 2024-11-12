@@ -11,6 +11,10 @@ Order.init(
       autoIncrement: true,
       primaryKey: true,
     },
+    oktaUserId: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     orderDate: {
       type: DataTypes.DATE,
       allowNull: false,

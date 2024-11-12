@@ -13,8 +13,8 @@ module.exports = {
     })
   },
   down: async ({ context: queryInterface }) => {
-    await queryInterface.removeColumn('orders', 'sales_tax');
+    await queryInterface.removeColumn('orders', 'sales_tax')
 
-    await queryInterface.removeColumn('order_details', 'sales_tax');
+    await queryInterface.removeColumn('order_details', 'sales_tax')
   },
 }
