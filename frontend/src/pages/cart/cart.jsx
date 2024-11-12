@@ -13,16 +13,35 @@ export const Cart = () => {
     useContext(ShopContext)
   const totalAmount = getTotalCartAmount()
   const cartDetailed = getCartDetailed()
-  const oktaUserId = user.sub
 
   const navigate = useNavigate()
 
   const makePayment = async () => {
+    const oktaUserId = user.sub
     const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_KEY}`)
 
     const body = {
       products: cartDetailed,
-      oktaUserId: oktaUserId || null
+      oktaUserId: oktaUserId
+    }
+
+    const session = await checkoutService.checkout(body)
+
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id,
+    })
+
+    if (result.error) {
+      console.log(result.error, 'result error')
+    }
+  }
+
+  const makePaymentAsGuest = async () => {
+    const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_KEY}`)
+
+    const body = {
+      products: cartDetailed,
+      oktaUserId: null
     }
 
     const session = await checkoutService.checkout(body)
@@ -77,7 +96,7 @@ export const Cart = () => {
               {isAuthenticated ? (
                 <button onClick={makePayment}>Checkout</button>
               ) : (
-                <button onClick={makePayment}>Checkout as Guest</button>
+                <button onClick={makePaymentAsGuest}>Checkout as Guest</button>
               )}
             </div>
           </div>

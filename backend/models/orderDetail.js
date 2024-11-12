@@ -33,6 +33,11 @@ OrderDetail.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
+    salesTax: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true,
+      defaultValue: 0.00,
+    }
   },
   {
     sequelize,
