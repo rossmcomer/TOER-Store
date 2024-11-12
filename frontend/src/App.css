@@ -37,6 +37,7 @@
   min-width: 344px;
   box-sizing: border-box;
   z-index: 1;
+  min-height: 100vh;
 }
 
 body,
@@ -221,7 +222,8 @@ html::before {
 /* loginBtn starts */
 
 #loginBtn,
-#logoutBtn {
+#logoutBtn,
+#profileBtn {
   font-size: 16px;
   margin-right: 20px;
 }

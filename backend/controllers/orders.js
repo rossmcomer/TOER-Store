@@ -6,11 +6,11 @@ router.get('/', async (req, res) => {
 
     try {
         const orders = await Order.findAll({
-          where: { customerEmail: email },
+          where: { oktaUserId: email },
           include: [{ model: OrderDetail, as: 'details' }],
         })
     
-        res.json(orders) // Send the result as JSON
+        res.json(orders)
       } catch (error) {
         console.error(error)
         res.status(500).json({ message: 'Server error' })

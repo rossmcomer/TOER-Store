@@ -19,6 +19,7 @@ export const NavBar = () => {
         </Link>
       </div>
       <div className="links">
+        {isAuthenticated && <Link to="/profile" id="profileBtn"><div>Profile</div></Link>}
         <Link to="/cart">
           <div className="cartIconWrapper">
             <ShoppingCart size={32} />

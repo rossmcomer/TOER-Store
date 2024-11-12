@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { NavBar } from './components/navbar'
 import { Shop } from './pages/shop/shop'
 import { Cart } from './pages/cart/cart'
+import { Profile } from './pages/profile/profile'
 import { Success } from './pages/success/success'
 import { Cancel } from './pages/cancel/cancel'
 import { ShopContextProvider } from './context/shop-context'
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile/>}/>
             <Route path="/success" element={<Success />} />
             <Route path="/cancel" element={<Cancel />} />
             <Route path="/products/:id" element={<ProductInfo />} />
