@@ -1,7 +1,9 @@
+const { DataTypes } = require('sequelize')
+
 module.exports = {
-    up: async ({ context: queryInterface, Sequelize }) => {
+    up: async ({ context: queryInterface }) => {
       await queryInterface.addColumn('orders', 'okta_user_id', {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: true,
       })
     },

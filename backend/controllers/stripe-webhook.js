@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
       const orderDate = new Date(checkoutSessionCompleted.created * 1000)
       const totalAmount = checkoutSessionCompleted.amount_total / 100
       const salesTax = checkoutSessionCompleted.total_details.amount_tax / 100
+      const oktaUserId = checkoutSessionCompleted.metadata.oktaUserId
 
       try {
         // Save to orders table
@@ -36,7 +37,8 @@ router.post('/', async (req, res) => {
           customerName: customerName,
           customerEmail: customerEmail,
           totalAmount: totalAmount,
-          salesTax: salesTax
+          salesTax: salesTax,
+          oktaUserId: oktaUserId
         })
 
         // Retrieve line items from the session to save in order_details table

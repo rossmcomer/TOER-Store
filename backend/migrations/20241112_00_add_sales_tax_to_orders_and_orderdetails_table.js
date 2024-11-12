@@ -1,13 +1,15 @@
+const { DataTypes } = require('sequelize')
+
 module.exports = {
-  up: async ({ context: queryInterface, Sequelize }) => {
+  up: async ({ context: queryInterface }) => {
     await queryInterface.addColumn('orders', 'sales_tax', {
-      type: Sequelize.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
       defaultValue: 0.00
     })
 
     await queryInterface.addColumn('order_details', 'sales_tax', {
-      type: Sequelize.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
       defaultValue: 0.00
     })
