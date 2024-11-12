@@ -3,7 +3,7 @@ const stripe = require('stripe')(STRIPE_SECRET)
 const router = require('express').Router()
 
 router.post('/', async (req, res) => {
-  const { products } = req.body
+  const { products, oktaUserId } = req.body
 
   const lineItems = products.map((product) => ({
     price_data: {
@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
       success_url: `${DOMAIN_NAME}/success`,
       cancel_url: `${DOMAIN_NAME}/cancel`,
       automatic_tax: { enabled: true },
+      metadata: { oktaUserId: oktaUserId  }
     })
 
     res.json({ id: session.id })

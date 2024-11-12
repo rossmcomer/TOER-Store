@@ -29,7 +29,7 @@ OrderDetail.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    unit_price: {
+    unitPrice: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
