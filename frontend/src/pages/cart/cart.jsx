@@ -5,13 +5,15 @@ import './cart.css'
 import { useNavigate } from 'react-router-dom'
 import { loadStripe } from '@stripe/stripe-js'
 import checkoutService from '../../services/checkout.js'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export const Cart = () => {
+  const { user, isAuthenticated } = useAuth0()
   const { allProducts, cartItems, getTotalCartAmount, getCartDetailed } =
     useContext(ShopContext)
   const totalAmount = getTotalCartAmount()
   const cartDetailed = getCartDetailed()
-  console.log(totalAmount, cartDetailed, 'cart')
+  const oktaUserId = user.sub
 
   const navigate = useNavigate()
 
@@ -20,6 +22,7 @@ export const Cart = () => {
 
     const body = {
       products: cartDetailed,
+      oktaUserId: oktaUserId || null
     }
 
     const session = await checkoutService.checkout(body)
@@ -71,7 +74,11 @@ export const Cart = () => {
             </div>
             <div className="buttonContainer">
               <button onClick={() => navigate('/')}> Continue Shopping </button>
-              <button onClick={makePayment}> Checkout </button>
+              {isAuthenticated ? (
+                <button onClick={makePayment}>Checkout</button>
+              ) : (
+                <button onClick={makePayment}>Checkout as Guest</button>
+              )}
             </div>
           </div>
         </>

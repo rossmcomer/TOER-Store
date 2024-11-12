@@ -69,8 +69,7 @@ router.post('/', async (req, res) => {
             }
           }
         }
-
-        // Return a 200 response to acknowledge receipt of the event
+        
         res.send()
       } catch (error) {
         console.error('Error saving order to database:', error)
