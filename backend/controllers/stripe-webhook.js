@@ -64,12 +64,12 @@ router.post('/', async (req, res) => {
                 orderId: newOrder.id,
                 productId: product.id,
                 quantity: item.quantity,
-                unit_price: item.price.unit_amount / 100,
+                unitPrice: item.price.unit_amount / 100,
               })
             }
           }
         }
-        
+
         res.send()
       } catch (error) {
         console.error('Error saving order to database:', error)
