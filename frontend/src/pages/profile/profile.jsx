@@ -13,10 +13,10 @@ export const Profile = () => {
 
   return (
     isAuthenticated ? (
-      <div>
-        <img src={user.picture} alt={user.name} />
+      <div id="profileInfo">
+        <img src={user.picture} alt='User Picture' />
         <h2>{user.name}</h2>
-        <p>{user.email}</p>
+        <div>Order History</div>
       </div>
     ) : (
       <div id="pleaseLogIn">
