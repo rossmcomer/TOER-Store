@@ -19,7 +19,7 @@ app.use(express.json())
 
 const checkoutRouter = require('./controllers/create-checkout-session')
 const productsRouter = require('./controllers/products')
-const ordersRouter = require('./controllers/products')
+const ordersRouter = require('./controllers/orders')
 
 app.use('/api/products', productsRouter)
 app.use('/api/create-checkout-session', checkoutRouter)
