@@ -13,6 +13,7 @@ ProductImage.belongsTo(Product, { foreignKey: 'productId' })
 
 OrderDetail.belongsTo(Order, { foreignKey: 'orderId' })
 OrderDetail.belongsTo(Product, { foreignKey: 'productId' })
+Order.hasMany(OrderDetail, { foreignKey: 'orderId' })
 
 module.exports = {
   Category,

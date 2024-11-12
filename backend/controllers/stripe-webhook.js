@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
       const customerEmail = checkoutSessionCompleted.customer_details.email
       const orderDate = new Date(checkoutSessionCompleted.created * 1000)
       const totalAmount = checkoutSessionCompleted.amount_total / 100
+      const salesTax = checkoutSessionCompleted.total_details.amount_tax / 100
 
       try {
         // Save to orders table
@@ -35,6 +36,7 @@ router.post('/', async (req, res) => {
           customerName: customerName,
           customerEmail: customerEmail,
           totalAmount: totalAmount,
+          salesTax: salesTax
         })
 
         // Retrieve line items from the session to save in order_details table
@@ -65,6 +67,7 @@ router.post('/', async (req, res) => {
                 productId: product.id,
                 quantity: item.quantity,
                 unitPrice: item.price.unit_amount / 100,
+                salesTax: item.tax_amounts[0]?.amount / 100
               })
             }
           }
