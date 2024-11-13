@@ -34,7 +34,9 @@ export const Profile = () => {
       <img src={user.picture} alt="User Picture" />
       <h2>{user.name}</h2>
       <div>Order History</div>
-      {orders.length === 0 && <div>You don't have any orders associated with your account.</div>}
+      {orders.length === 0 && (
+        <div>You don't have any orders associated with your account.</div>
+      )}
     </div>
   ) : (
     <div id="pleaseLogIn">Please log in to view your profile</div>
