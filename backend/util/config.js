@@ -4,6 +4,7 @@ module.exports = {
   DATABASE_URL: process.env.DATABASE_URL,
   PORT: process.env.PORT || 3001,
   SECRET: process.env.SECRET,
+  AUTH0_ISSUER: process.env.AUTH0_ISSUER,
   STRIPE_SECRET: process.env.STRIPE_SECRET,
   CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME,
   CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,

@@ -2,13 +2,13 @@ import axios from '../util/apiClient'
 const baseUrl = '/orders'
 
 const getAll = async (token) => {
-    const headers = {
-        Authorization: `Bearer ${token}`,
-    }
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  }
 
-    const request = await axios.get(baseUrl, { headers })
+  const response = await axios.get(baseUrl, { headers })
 
-    return request.data
+  return response.data
 }
 
 export default { getAll }

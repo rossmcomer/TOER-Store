@@ -22,7 +22,7 @@ export const Cart = () => {
 
     const body = {
       products: cartDetailed,
-      oktaUserId: oktaUserId
+      oktaUserId: oktaUserId,
     }
 
     const session = await checkoutService.checkout(body)
@@ -41,7 +41,7 @@ export const Cart = () => {
 
     const body = {
       products: cartDetailed,
-      oktaUserId: null
+      oktaUserId: null,
     }
 
     const session = await checkoutService.checkout(body)

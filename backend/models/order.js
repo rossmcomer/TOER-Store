@@ -13,7 +13,7 @@ Order.init(
     },
     oktaUserId: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
     },
     orderDate: {
       type: DataTypes.DATE,
@@ -34,8 +34,8 @@ Order.init(
     salesTax: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-      defaultValue: 0.00,
-    }
+      defaultValue: 0.0,
+    },
   },
   {
     sequelize,

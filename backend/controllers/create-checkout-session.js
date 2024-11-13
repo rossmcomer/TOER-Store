@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
       success_url: `${DOMAIN_NAME}/success`,
       cancel_url: `${DOMAIN_NAME}/cancel`,
       automatic_tax: { enabled: true },
-      metadata: { oktaUserId: oktaUserId  }
+      metadata: { oktaUserId: oktaUserId },
     })
 
     res.json({ id: session.id })

@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
           customerEmail: customerEmail,
           totalAmount: totalAmount,
           salesTax: salesTax,
-          oktaUserId: oktaUserId
+          oktaUserId: oktaUserId,
         })
 
         // Retrieve line items from the session to save in order_details table
@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
                 productId: product.id,
                 quantity: item.quantity,
                 unitPrice: item.price.unit_amount / 100,
-                salesTax: item.tax_amounts[0]?.amount / 100
+                salesTax: item.tax_amounts[0]?.amount / 100,
               })
             }
           }

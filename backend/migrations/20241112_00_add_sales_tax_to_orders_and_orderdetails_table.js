@@ -5,13 +5,13 @@ module.exports = {
     await queryInterface.addColumn('orders', 'sales_tax', {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-      defaultValue: 0.00
+      defaultValue: 0.0,
     })
 
     await queryInterface.addColumn('order_details', 'sales_tax', {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-      defaultValue: 0.00
+      defaultValue: 0.0,
     })
   },
   down: async ({ context: queryInterface }) => {

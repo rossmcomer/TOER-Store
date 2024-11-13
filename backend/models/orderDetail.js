@@ -36,8 +36,8 @@ OrderDetail.init(
     salesTax: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-      defaultValue: 0.00,
-    }
+      defaultValue: 0.0,
+    },
   },
   {
     sequelize,
