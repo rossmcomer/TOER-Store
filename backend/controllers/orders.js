@@ -1,17 +1,11 @@
-const jwt = require('jsonwebtoken');
 const router = require('express').Router()
+const { tokenExtractor } = require('../util/middleware')
 const { Product, ProductImage, Category, Order, OrderDetail } = require('../models')
 
-router.get('/', async (req, res) => {
-  const token = req.headers['authorization']?.split(' ')[1]
-
-  if (!token) {
-    return res.status(403).json({ message: 'Access denied, no token provided' });
-  }
-
+router.get('/', tokenExtractor, async (req, res) => {
     try {
         const orders = await Order.findAll({
-          where: { oktaUserId },
+          where: { oktaUserId: req.oktaUserId },
           include: [{ model: OrderDetail, as: 'order_details' }],
         })
     
