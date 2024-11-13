@@ -7,13 +7,11 @@ const client = jwksClient({
 })
 
 const getKey = (header, callback) => {
-    console.log('headerkid', header.kid)
   client.getSigningKey(header.kid, (err, key) => {
     if (err) {
       return callback(err)
     }
     const signingKey = key.getPublicKey()
-    console.log('signingKey', signingKey)
     callback(null, signingKey)
   })
 }
@@ -29,14 +27,13 @@ const tokenExtractor = (req, res, next) => {
     token,
     getKey,
     {
-      issuer: AUTH0_ISSUER,
       algorithms: ['RS256'],
     },
     (err, decoded) => {
       if (err) {
         return res.status(401).json({ message: 'Invalid or expired token' })
       }
-      console.log('decoded', decoded)
+      
       req.oktaUserId = decoded.sub
       next()
     },
