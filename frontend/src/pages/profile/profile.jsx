@@ -33,33 +33,35 @@ export const Profile = () => {
 
   return isAuthenticated ? (
     <div id="profileContainer">
-      <h2>Orders</h2>
-      <div className='userInfo'>
-        <img src={user.picture} alt="User Picture" />
-        <h3>{user.name}</h3>
+      <div className="userInfo">
+        <img src={user.picture} alt="User Picture" className="profilePic" />
+        <div>{user.name}</div>
       </div>
-      <div>Orders</div>
-      {orders.length >= 1 ? (
-        <div>
-        <h3>Your Orders:</h3>
-        {orders.map((order) => (
-          <div key={order.id} className="order">
-            <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
-            
-            {order.order_details.map((detail) => (
-              <div key={detail.id} className="order-detail">
-                <p>Product ID: {detail.productId}</p>
-                <p>Quantity: {detail.quantity}</p>
-                <p>Unit Price: ${detail.unitPrice}</p>
-                <p>Sales Tax: ${detail.salesTax}</p>
+      <div>
+        <h2>Orders</h2>
+        {orders.length >= 1 ? (
+          <div>
+            {orders.map((order) => (
+              <div key={order.id} className="order">
+                <p>
+                  Order Date: {new Date(order.orderDate).toLocaleDateString()}
+                </p>
+
+                {order.order_details.map((detail) => (
+                  <div key={detail.id} className="orderDetail">
+                    <p>Product ID: {detail.productId}</p>
+                    <p>Quantity: {detail.quantity}</p>
+                    <p>Unit Price: ${detail.unitPrice}</p>
+                    <p>Sales Tax: ${detail.salesTax}</p>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
-        ))}
+        ) : (
+          <div>You don't have any orders associated with your account.</div>
+        )}
       </div>
-      ) : (
-        <div>You don't have any orders associated with your account.</div>
-      )}
     </div>
   ) : (
     <div id="pleaseLogIn">Please log in to view your profile</div>

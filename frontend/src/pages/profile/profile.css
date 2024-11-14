@@ -17,5 +17,18 @@
 }
 
 .userInfo {
-  display:flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePic {
+  width: 100px;
+}
+
+.order {
+  display: flex;
+}
+
+.orderDetail {
+  display: flex;
 }
