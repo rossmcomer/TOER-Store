@@ -2,12 +2,11 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import './profile.css'
 import userOrdersService from '../../services/userOrders'
-import { ShopContext } from '../../context/shop-context'
+import { OrderItem } from './order-item'
 
 export const Profile = () => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0()
-  const { allProducts } = useContext(ShopContext)
   const [orders, setOrders] = useState([])
 
   useEffect(() => {
@@ -37,27 +36,24 @@ export const Profile = () => {
         <img src={user.picture} alt="User Picture" className="profilePic" />
         <div>{user.name}</div>
       </div>
-      <div>
+      <div id="ordersContainer">
         <h2>Orders</h2>
-        {orders.length >= 1 ? (
-          <div>
-            {orders.map((order) => (
-              <div key={order.id} className="order">
-                <p>
-                  Order Date: {new Date(order.orderDate).toLocaleDateString()}
-                </p>
-
-                {order.order_details.map((detail) => (
-                  <div key={detail.id} className="orderDetail">
-                    <p>Product ID: {detail.productId}</p>
-                    <p>Quantity: {detail.quantity}</p>
-                    <p>Unit Price: ${detail.unitPrice}</p>
-                    <p>Sales Tax: ${detail.salesTax}</p>
-                  </div>
+        {orders.length > 0 ? (
+          <>
+            <table className="orderItemsTable">
+              <thead>
+                <tr className="headerRow">
+                  <th className="orderDate">Date</th>
+                  <th className="orderTotal">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order) => (
+                  <OrderItem />
                 ))}
-              </div>
-            ))}
-          </div>
+              </tbody>
+            </table>
+          </>
         ) : (
           <div>You don't have any orders associated with your account.</div>
         )}
