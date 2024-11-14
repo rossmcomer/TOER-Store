@@ -11,6 +11,7 @@ ENV REACT_APP_STRIPE_KEY=pk_test_51PG1um2KnpuiMiMn2Tl3f5VVJL4yUmVPxiuwdr69W8WJfz
 ENV REACT_APP_BACKEND_URL=https://toerstore.com/api
 ENV REACT_APP_AUTH0_DOMAIN=dev-hluwv5rakipkhxyd.us.auth0.com
 ENV REACT_APP_AUTH0_CLIENT_ID=InUoHLt4o3xSboAqEHg2pOrb1bV2c6b4
+ENV REACT_APP_AUTH0_AUDIENCE=https://toerstore.com/auth0-api
 ENV HTTPS=true
 
 RUN npm run build

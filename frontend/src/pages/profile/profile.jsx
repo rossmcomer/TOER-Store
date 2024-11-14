@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import './profile.css'
 import userOrdersService from '../../services/userOrders'
+import { ShopContext } from '../../context/shop-context'
 
 export const Profile = () => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0()
+  const { allProducts } = useContext(ShopContext)
   const [orders, setOrders] = useState([])
-
-  if (isLoading) {
-    return <div>Loading ...</div>
-  }
 
   useEffect(() => {
     const fetchUserOrders = async () => {
@@ -29,12 +27,37 @@ export const Profile = () => {
     fetchUserOrders()
   }, [user])
 
+  if (isLoading) {
+    return <div>Loading ...</div>
+  }
+
   return isAuthenticated ? (
-    <div id="profileInfo">
-      <img src={user.picture} alt="User Picture" />
-      <h2>{user.name}</h2>
-      <div>Order History</div>
-      {orders.length === 0 && (
+    <div id="profileContainer">
+      <h2>Orders</h2>
+      <div className='userInfo'>
+        <img src={user.picture} alt="User Picture" />
+        <h3>{user.name}</h3>
+      </div>
+      <div>Orders</div>
+      {orders.length >= 1 ? (
+        <div>
+        <h3>Your Orders:</h3>
+        {orders.map((order) => (
+          <div key={order.id} className="order">
+            <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
+            
+            {order.order_details.map((detail) => (
+              <div key={detail.id} className="order-detail">
+                <p>Product ID: {detail.productId}</p>
+                <p>Quantity: {detail.quantity}</p>
+                <p>Unit Price: ${detail.unitPrice}</p>
+                <p>Sales Tax: ${detail.salesTax}</p>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      ) : (
         <div>You don't have any orders associated with your account.</div>
       )}
     </div>
