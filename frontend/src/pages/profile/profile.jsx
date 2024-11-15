@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import './profile.css'
 import userOrdersService from '../../services/userOrders'
-import { OrderItem } from './order-item'
+import { OrdersTable } from './orders-table'
 
 export const Profile = () => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
@@ -39,21 +39,7 @@ export const Profile = () => {
       <div id="ordersContainer">
         <h2>Orders</h2>
         {orders.length > 0 ? (
-          <>
-            <table className="orderItemsTable">
-              <thead>
-                <tr className="headerRow">
-                  <th className="orderDate">Date</th>
-                  <th className="orderTotal">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {orders.map((order) => (
-                  <OrderItem />
-                ))}
-              </tbody>
-            </table>
-          </>
+            <OrdersTable orders={orders}/>
         ) : (
           <div>You don't have any orders associated with your account.</div>
         )}
