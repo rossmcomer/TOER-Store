@@ -39,7 +39,7 @@ export const Profile = () => {
       <div id="ordersContainer">
         <h2>Orders</h2>
         {orders.length > 0 ? (
-            <OrdersTable orders={orders}/>
+          <OrdersTable orders={orders} />
         ) : (
           <div>You don't have any orders associated with your account.</div>
         )}
