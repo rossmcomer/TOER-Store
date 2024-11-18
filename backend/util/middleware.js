@@ -33,7 +33,7 @@ const tokenExtractor = (req, res, next) => {
       if (err) {
         return res.status(401).json({ message: 'Invalid or expired token' })
       }
-      
+
       req.oktaUserId = decoded.sub
       next()
     },

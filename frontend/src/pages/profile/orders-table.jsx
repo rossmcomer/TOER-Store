@@ -1,5 +1,6 @@
 import React from 'react'
 import { OrderItem } from './order-item'
+import './profile.css'
 
 export const OrdersTable = ({ orders }) => {
   return (
@@ -7,8 +8,8 @@ export const OrdersTable = ({ orders }) => {
       <table className="orderItemsTable">
         <thead>
           <tr className="headerRow">
-            <th className="orderDate">Date</th>
-            <th className="orderTotal">Total</th>
+            <th className="orderDateHeader">Date</th>
+            <th className="orderTotalHeader">Total</th>
           </tr>
         </thead>
         <tbody>

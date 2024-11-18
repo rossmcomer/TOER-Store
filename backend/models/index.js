@@ -11,7 +11,7 @@ Product.belongsTo(Supplier, { foreignKey: 'supplierId' })
 Product.hasMany(ProductImage, { foreignKey: 'productId', as: 'images' })
 ProductImage.belongsTo(Product, { foreignKey: 'productId' })
 
-OrderDetail.belongsTo(Order, { foreignKey: 'orderId' })
+OrderDetail.belongsTo(Order, { foreignKey: 'orderId', as: 'order_details' })
 OrderDetail.belongsTo(Product, { foreignKey: 'productId' })
 Order.hasMany(OrderDetail, { foreignKey: 'orderId' })
 

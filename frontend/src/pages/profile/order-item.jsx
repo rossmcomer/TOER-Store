@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ShopContext } from '../../context/shop-context'
+import './profile.css'
 
 export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
   const { allProducts } = useContext(ShopContext)
@@ -33,17 +34,17 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
             <table className="orderDetailsTable">
               <thead>
                 <tr>
-                  <th>Product ID</th>
+                  <th>Product</th>
                   <th>Quantity</th>
                   <th>Unit Price</th>
                   <th>Sales Tax</th>
                 </tr>
               </thead>
               <tbody>
-                {Array.isArray(order_details) &&
-                  order_details.map((detail) => (
+                {order_details.map((detail) => (
                     <tr key={detail.id}>
-                      <td>{detail.productId}</td>
+                      <td>img</td>
+                      {/* <td><img src={product.images[0].imageUrl} alt={product.name} className="ordersItemImage" /></td> */}
                       <td>{detail.quantity}</td>
                       <td>${parseFloat(detail.unitPrice).toFixed(2)}</td>
                       <td>${parseFloat(detail.salesTax).toFixed(2)}</td>

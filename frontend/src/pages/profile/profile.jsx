@@ -32,10 +32,10 @@ export const Profile = () => {
 
   return isAuthenticated ? (
     <div id="profileContainer">
-      <div className="userInfo">
+      {/* <div className="userInfo">
         <img src={user.picture} alt="User Picture" className="profilePic" />
         <div>{user.name}</div>
-      </div>
+      </div> */}
       <div id="ordersContainer">
         <h2>Orders</h2>
         {orders.length > 0 ? (
