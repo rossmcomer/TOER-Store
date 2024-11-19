@@ -45,6 +45,8 @@
   width: calc(100% - 20px);
   box-sizing: border-box;
   min-width: 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .headerRow {
@@ -61,8 +63,15 @@
   flex-basis: 50%;
 }
 
-.orderDetail {
-  display: flex;
+.order {
+  min-width: 350px;
+  width: calc(100% - 20px);
+}
+
+.order {
+  display:flex;
+  justify-content: space-between;
+  width: 100%
 }
 
 .orderstItemImage {
