@@ -14,15 +14,12 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
 
   return (
     <>
-      <tr className="orderItem">
-        <td className="orderContainer" colSpan="3">
+      <tr className={`orderItem ${isExpanded ? 'expanded' : ''}`} aria-expanded={isExpanded} onClick={toggleExpand}>
+        <td>
           {new Date(orderDate).toLocaleDateString()}
         </td>
         <td>
           {totalAmount}
-            <button onClick={toggleExpand} aria-label="Toggle details">
-              {isExpanded ? '▲' : '▼'}
-            </button>
         </td>
       </tr>
 
