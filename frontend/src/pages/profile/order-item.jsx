@@ -14,13 +14,13 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
 
   return (
     <>
-      <tr className={`orderItem ${isExpanded ? 'expanded' : ''}`} aria-expanded={isExpanded} onClick={toggleExpand}>
-        <td>
-          {new Date(orderDate).toLocaleDateString()}
-        </td>
-        <td>
-          {totalAmount}
-        </td>
+      <tr
+        className={`orderItem ${isExpanded ? 'expanded' : ''}`}
+        aria-expanded={isExpanded}
+        onClick={toggleExpand}
+      >
+        <td>{new Date(orderDate).toLocaleDateString()}</td>
+        <td>{totalAmount}</td>
       </tr>
 
       {isExpanded && (
@@ -37,14 +37,14 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
               </thead>
               <tbody>
                 {order_details.map((detail) => (
-                    <tr key={detail.id}>
-                      <td>img</td>
-                      {/* <td><img src={product.images[0].imageUrl} alt={product.name} className="ordersItemImage" /></td> */}
-                      <td>{detail.quantity}</td>
-                      <td>${parseFloat(detail.unitPrice).toFixed(2)}</td>
-                      <td>${parseFloat(detail.salesTax).toFixed(2)}</td>
-                    </tr>
-                  ))}
+                  <tr key={detail.id}>
+                    <td>img</td>
+                    {/* <td><img src={product.images[0].imageUrl} alt={product.name} className="ordersItemImage" /></td> */}
+                    <td>{detail.quantity}</td>
+                    <td>${parseFloat(detail.unitPrice).toFixed(2)}</td>
+                    <td>${parseFloat(detail.salesTax).toFixed(2)}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </td>
