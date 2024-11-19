@@ -17,7 +17,7 @@ export const Profile = () => {
         const token = await getAccessTokenSilently()
 
         const data = await userOrdersService.getAll(token)
-        
+
         setOrders(data)
       } catch (error) {
         console.log('Error fetching user orders', error)

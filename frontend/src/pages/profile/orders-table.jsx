@@ -8,6 +8,7 @@ export const OrdersTable = ({ orders }) => {
       <table className="orderItemsTable">
         <thead>
           <tr className="headerRow">
+            <th>Order #</th>
             <th>Date</th>
             <th>Total</th>
           </tr>
