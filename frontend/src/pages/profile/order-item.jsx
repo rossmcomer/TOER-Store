@@ -12,6 +12,7 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
 
   const getProduct = (order_detail) => {
     const product = allProducts.find((p) => p.id === order_detail.productId)
+    console.log(product, 'product')
     return product
   }
 
@@ -23,7 +24,7 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
         onClick={toggleExpand}
       >
         <td>{new Date(orderDate).toLocaleDateString()}</td>
-        <td>{totalAmount}</td>
+        <td>${totalAmount}</td>
       </tr>
 
       {isExpanded && (
@@ -33,9 +34,9 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
               <thead>
                 <tr className="orderDetailsTableHeader">
                   <th>Product</th>
+                  <th>Size</th>
                   <th>Qty</th>
                   <th>$</th>
-                  <th>Tax</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,9 +44,9 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
                   <tr key={detail.id}>
                     <td><img src={getProduct(detail).images[0].imageUrl} alt="productImage" className="orderDetailsImage"></img></td>
                     {/* <td><img src={product.images[0].imageUrl} alt={product.name} className="ordersItemImage" /></td> */}
+                    <td>{getProduct(detail).size}</td>
                     <td>{detail.quantity}</td>
-                    <td>${parseFloat(detail.unitPrice).toFixed(2)}</td>
-                    <td>${parseFloat(detail.salesTax).toFixed(2)}</td>
+                    <td>${detail.unitPrice}</td>
                   </tr>
                 ))}
               </tbody>
