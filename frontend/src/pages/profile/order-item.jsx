@@ -25,14 +25,14 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
 
       {isExpanded && (
         <tr className="orderDetailsRow">
-          <td colSpan="2">
+          <td>
             <table className="orderDetailsTable">
               <thead>
-                <tr>
+                <tr className="orderDetailsTableHeader">
                   <th>Product</th>
-                  <th>Quantity</th>
-                  <th>Unit Price</th>
-                  <th>Sales Tax</th>
+                  <th>Qty</th>
+                  <th>$</th>
+                  <th>Tax</th>
                 </tr>
               </thead>
               <tbody>
