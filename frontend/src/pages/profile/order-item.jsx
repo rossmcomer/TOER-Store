@@ -10,7 +10,10 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
     setIsExpanded(!isExpanded)
   }
 
-  const product = allProducts.find((p) => p.id === id)
+  const getProduct = (order_detail) => {
+    const product = allProducts.find((p) => p.id === order_detail.productId)
+    return product
+  }
 
   return (
     <>
@@ -38,7 +41,7 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
               <tbody>
                 {order_details.map((detail) => (
                   <tr key={detail.id}>
-                    <td>img</td>
+                    <td><img src={getProduct(detail).images[0].imageUrl} alt="productImage" className="orderDetailsImage"></img></td>
                     {/* <td><img src={product.images[0].imageUrl} alt={product.name} className="ordersItemImage" /></td> */}
                     <td>{detail.quantity}</td>
                     <td>${parseFloat(detail.unitPrice).toFixed(2)}</td>
