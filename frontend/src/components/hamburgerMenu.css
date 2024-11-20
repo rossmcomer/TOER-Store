@@ -3,6 +3,19 @@
   margin-right: 20px;
 }
 
+.profilePic {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: var(--border-black);
+  border-radius: 8px;
+}
+
+.profilePic:hover {
+  transform: scale(1.25);
+}
+
 .hamburger-icon {
   cursor: pointer;
   width: 30px;
@@ -57,4 +70,12 @@
 .menu-options.open .close-btn:hover {
   transform: scale(1.25);
   transition: transform 0.3s ease;
+}
+
+.menu-options .signed-in {
+  margin-top: auto;
+  padding: 10px 0;
+  margin-bottom: 50px;
+  font-size: 14px;
+  color: #333;
 }
