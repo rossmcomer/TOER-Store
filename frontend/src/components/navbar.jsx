@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ShoppingCart } from 'phosphor-react'
 import logo from '../assets/Twhitebackground.png'
 import LoginButton from './loginButton'
-import LogoutButton from './logoutButton'
+import HamburgerMenu from './hamburgerMenu'
 import { useAuth0 } from '@auth0/auth0-react'
 import { ShopContext } from '../context/shop-context'
 
@@ -19,12 +19,7 @@ export const NavBar = () => {
         </Link>
       </div>
       <div className="links">
-        {isAuthenticated && (
-          <Link to="/profile" id="profileBtn">
-            <div>Profile</div>
-          </Link>
-        )}
-        <Link to="/cart">
+        <Link to="/cart" className='cartIconContainer'>
           <div className="cartIconWrapper">
             <ShoppingCart size={32} />
             {getCartItemsCount() > 0 && (
@@ -32,7 +27,7 @@ export const NavBar = () => {
             )}
           </div>
         </Link>
-        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        {isAuthenticated ? <HamburgerMenu /> : <LoginButton />}
       </div>
     </div>
   )

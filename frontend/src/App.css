@@ -91,6 +91,10 @@ html::before {
   transition: border-color var(--transition);
 }
 
+.cartIconContainer {
+  margin-right: 20px;
+}
+
 .cartIconWrapper {
   position: relative;
   display: inline-block;
@@ -117,7 +121,6 @@ html::before {
 .links a {
   text-decoration: none;
   color: black;
-  margin-right: 20px;
   font-size: 25px;
   transition: transform 0.3s ease;
 }
@@ -221,11 +224,15 @@ html::before {
 
 /* loginBtn starts */
 
-#loginBtn,
-#logoutBtn,
-#profileBtn {
+#loginBtn {
   font-size: 16px;
   margin-right: 20px;
+}
+
+#logoutBtn,
+#profileBtn {
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 .back-arrow svg {
