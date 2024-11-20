@@ -7,13 +7,14 @@ import './productInfo.css'
 export const ProductInfo = () => {
   const location = useLocation()
   const navigate = useNavigate()
-  const { allProducts, cartItems, addToCart } = useContext(ShopContext)
+  const { allProducts, cartItems, addToCart, notify } = useContext(ShopContext)
   const product = location.state?.product
   const [selectedProduct, setSelectedProduct] = useState(product)
   const availableProducts = allProducts.filter(
     (item) => item.name === product.name,
   )
-  console.log(availableProducts)
+  console.log(availableProducts, 'availableproducts')
+  console.log(selectedProduct, 'selectedProduct')
 
   const handleSizeSelect = (size) => {
     const product = availableProducts.find((p) => p.size === size)
@@ -30,7 +31,6 @@ export const ProductInfo = () => {
             <div className="description">
               <p>
                 <b>{product.name}</b>
-                {/* <p className=''>{product.description}</p> */}
               </p>
             </div>
             <div className="image-and-sizes">
@@ -49,7 +49,16 @@ export const ProductInfo = () => {
               <div className="sizes-container">
                 <button
                   className="addToCartBtn"
-                  onClick={() => addToCart(selectedProduct.id)}
+                  onClick={() => {
+                    if (selectedProduct.unitsInStock - cartItems[selectedProduct.id] <= 0) {
+                      notify(
+                        `Cannot add more items. Only ${selectedProduct.unitsInStock} items are left in stock.`,
+                        'error',
+                      )
+                    } else {
+                      addToCart(selectedProduct.id)
+                    }
+                  }}
                 >
                   Add To Cart{' '}
                   {cartItems[selectedProduct.id] > 0 && (

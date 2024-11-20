@@ -32,7 +32,7 @@ export const CartItem = (props) => {
               const newValue = Number(e.target.value)
 
               if (newValue > unitsInStock) {
-                notify(`Only ${unitsInStock} items are left in stock!`, 'error')
+                notify(`Cannot add more items. Only ${unitsInStock} items are left in stock!`, 'error')
 
                 updateCartItemCount(cartItems[id], id)
               } else if (newValue >= 0) {
@@ -44,7 +44,7 @@ export const CartItem = (props) => {
             onClick={() => {
               if (unitsInStock - cartItems[id] <= 0) {
                 notify(
-                  `Cannot add more items. Only ${unitsInStock} items are available in stock.`,
+                  `Cannot add more items. Only ${unitsInStock} items are left in stock.`,
                   'error',
                 )
               } else {
