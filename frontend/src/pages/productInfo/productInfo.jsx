@@ -75,7 +75,8 @@ export const ProductInfo = () => {
                             <label
                               htmlFor={`${product.size}`}
                               onClick={() => {
-                                if (product.unitsInStock > 0) handleSizeSelect(product.size)
+                                if (product.unitsInStock > 0)
+                                  handleSizeSelect(product.size)
                               }}
                             >
                               <span>{product.size}</span>

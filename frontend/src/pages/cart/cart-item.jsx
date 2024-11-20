@@ -29,23 +29,31 @@ export const CartItem = (props) => {
           <input
             value={cartItems[id]}
             onChange={(e) => {
-              const newValue = Number(e.target.value);
+              const newValue = Number(e.target.value)
 
               if (newValue > unitsInStock) {
-                notify(`Only ${unitsInStock} items are left in stock!`,
-                  'error',
-                )
+                notify(`Only ${unitsInStock} items are left in stock!`, 'error')
 
-                updateCartItemCount(cartItems[id], id);
+                updateCartItemCount(cartItems[id], id)
               } else if (newValue >= 0) {
-                updateCartItemCount(newValue, id);
+                updateCartItemCount(newValue, id)
               }
             }}
           />
           <button
-            onClick={() => addToCart(id)}
-            disabled={unitsInStock - cartItems[id] <= 0}
-  >+</button>
+            onClick={() => {
+              if (unitsInStock - cartItems[id] <= 0) {
+                notify(
+                  `Cannot add more items. Only ${unitsInStock} items are available in stock.`,
+                  'error',
+                )
+              } else {
+                addToCart(id)
+              }
+            }}
+          >
+            +
+          </button>
         </div>
 
         <div className="cartItemSubtotal">${subtotal}</div>

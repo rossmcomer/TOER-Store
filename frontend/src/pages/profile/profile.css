@@ -60,7 +60,9 @@
   transition: border-bottom 0.3s;
   margin-bottom: 10px;
   color: var(--text-color);
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
 }
 
 .orderItemsTable th {
