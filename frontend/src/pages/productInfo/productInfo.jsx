@@ -13,6 +13,7 @@ export const ProductInfo = () => {
   const availableProducts = allProducts.filter(
     (item) => item.name === product.name,
   )
+  console.log(availableProducts)
 
   const handleSizeSelect = (size) => {
     const product = availableProducts.find((p) => p.size === size)
@@ -69,10 +70,13 @@ export const ProductInfo = () => {
                               value={product.size}
                               checked={product.size === selectedProduct.size}
                               readOnly={true}
+                              disabled={product.unitsInStock === 0}
                             />
                             <label
-                              htmlFor={`size-${index}`}
-                              onClick={() => handleSizeSelect(product.size)}
+                              htmlFor={`${product.size}`}
+                              onClick={() => {
+                                if (product.unitsInStock > 0) handleSizeSelect(product.size)
+                              }}
                             >
                               <span>{product.size}</span>
                             </label>

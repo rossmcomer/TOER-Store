@@ -6,8 +6,6 @@ const { Product } = require('../models')
 router.post('/', async (req, res) => {
   const { products, oktaUserId } = req.body
 
-  console.log(products)
-
   for (const product of products) {
     const dbProduct = await Product.findByPk(product.id)
 
