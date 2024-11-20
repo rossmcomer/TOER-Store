@@ -136,6 +136,7 @@ export const ShopContextProvider = (props) => {
     allProducts,
     loading,
     cartItems,
+    notify,
     addToCart,
     removeFromCart,
     updateCartItemCount,

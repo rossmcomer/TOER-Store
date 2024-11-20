@@ -14,6 +14,10 @@ export const Cart = () => {
   const totalAmount = getTotalCartAmount()
   const cartDetailed = getCartDetailed()
 
+  console.log(allProducts, 'allProducts')
+  console.log(cartDetailed, 'cartDetailed')
+  console.log(cartItems, 'cartItems')
+
   const navigate = useNavigate()
 
   const makePayment = async () => {

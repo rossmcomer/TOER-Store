@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../../context/shop-context'
 
 export const CartItem = (props) => {
-  const { id, name, unitPrice, images, size } = props.data
-  const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
+  const { id, name, unitPrice, images, size, unitsInStock } = props.data
+  const { cartItems, addToCart, removeFromCart, updateCartItemCount, notify } =
     useContext(ShopContext)
 
   const quantity = cartItems[id]
@@ -28,9 +28,24 @@ export const CartItem = (props) => {
           <button onClick={() => removeFromCart(id)}>-</button>
           <input
             value={cartItems[id]}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
+            onChange={(e) => {
+              const newValue = Number(e.target.value);
+
+              if (newValue > unitsInStock) {
+                notify(`Only ${unitsInStock} items are left in stock!`,
+                  'error',
+                )
+
+                updateCartItemCount(cartItems[id], id);
+              } else if (newValue >= 0) {
+                updateCartItemCount(newValue, id);
+              }
+            }}
           />
-          <button onClick={() => addToCart(id)}>+</button>
+          <button
+            onClick={() => addToCart(id)}
+            disabled={unitsInStock - cartItems[id] <= 0}
+  >+</button>
         </div>
 
         <div className="cartItemSubtotal">${subtotal}</div>
