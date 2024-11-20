@@ -14,17 +14,8 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
 
   const getProduct = (order_detail) => {
     const product = allProducts.find((p) => p.id === order_detail.productId)
-
     return product
   }
-
-  // const handleImageClick = (order_detail) => {
-  //   const product = getProduct(order_detail)
-  //   console.log(product, 'product')
-  //   const encodedName = encodeURIComponent(product.name)
-  //   console.log(encodedName, 'encodedname')
-  //   navigate(`/products/${encodedName}`, { state: { product }})
-  // }
 
   return (
     <>
@@ -51,22 +42,30 @@ export const OrderItem = ({ id, orderDate, totalAmount, order_details }) => {
                 </tr>
               </thead>
               <tbody>
-                {order_details.map((detail) => (
-                  <tr key={detail.id}>
-                    <td>
-                      <img
-                        src={getProduct(detail).images[0].imageUrl}
-                        alt="productImage"
-                        className="orderDetailsImage"
-                        // onClick={handleImageClick(detail)}
-                        // style={{ cursor: 'pointer' }}
-                      ></img>
-                    </td>
-                    <td>{getProduct(detail).size}</td>
-                    <td>{detail.quantity}</td>
-                    <td>{detail.unitPrice}</td>
-                  </tr>
-                ))}
+                {order_details.map((detail) => {
+                  const product = getProduct(detail)
+                  return (
+                    <tr key={detail.id}>
+                      <td>
+                        <img
+                          src={product.images[0].imageUrl}
+                          alt="productImage"
+                          className="orderDetailsImage"
+                          onClick={() =>
+                            navigate(
+                              `/products/${encodeURIComponent(product.name)}`,
+                              { state: { product: product } },
+                            )
+                          }
+                          style={{ cursor: 'pointer' }}
+                        ></img>
+                      </td>
+                      <td>{getProduct(detail).size}</td>
+                      <td>{detail.quantity}</td>
+                      <td>{detail.unitPrice}</td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </td>
