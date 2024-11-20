@@ -1,42 +1,60 @@
 .hamburgerMenuContainer {
-    position: relative;
-    margin-right: 20px;
-    
+  position: relative;
+  margin-right: 20px;
 }
 
 .hamburger-icon {
-    cursor: pointer;
-    width: 30px;
-    height: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: var(--transition);
-  }
-
-  .hamburger-icon:hover {
-    transform: scale(1.25)
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
 }
-  
-  .hamburger-icon span {
-    display: block;
-    height: 4px;
-    background-color: #000;
-    border-radius: 5px;
-  }
 
-  .menu-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: -80px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    padding: 15px;
-    z-index: 100;
-    border: var(--border)
-  }
+.hamburger-icon:hover {
+  transform: scale(1.25);
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 4px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: #bdbdbd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: right 0.5s ease-in-out;
+  border-radius: 5px;
+  padding: 15px;
+  z-index: 100;
+  height: 100%;
+  width: 200px;
+}
+
+.menu-options.open {
+  right: 0;
+  transition: right 0.5s ease-in-out;
+}
+
+.menu-options .close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.menu-options.open .close-btn:hover {
+  transform: scale(1.25);
+  transition: transform 0.3s ease;
+}

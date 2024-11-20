@@ -19,7 +19,7 @@ export const NavBar = () => {
         </Link>
       </div>
       <div className="links">
-        <Link to="/cart" className='cartIconContainer'>
+        <Link to="/cart" className="cartIconContainer">
           <div className="cartIconWrapper">
             <ShoppingCart size={32} />
             {getCartItemsCount() > 0 && (
