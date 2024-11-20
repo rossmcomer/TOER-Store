@@ -39,7 +39,7 @@
 
 .product img {
   width: 300px;
-  border-radius: 5px;
+  border-radius: 7px;
   /* border: var(--border-bold); */
   box-shadow: var(--box-shadow-color);
   transition:
@@ -72,7 +72,7 @@
 
 .addToCartBtn {
   font-family: 'Event Horizon Medium';
-  background-color: var(--background-color);
+  background-color: transparent;
   border: var(--border-bold);
   min-width: 100px;
   padding: 5px 10px;
