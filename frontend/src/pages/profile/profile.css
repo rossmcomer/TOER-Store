@@ -78,7 +78,7 @@
 }
 
 .orderItem.expanded {
-  background-color: rgb(100, 100, 100, 0.2);
+  background-color: rgb(100, 100, 100, 0.4);
 }
 
 .orderItem td {
