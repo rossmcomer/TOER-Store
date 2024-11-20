@@ -50,7 +50,11 @@ export const ProductInfo = () => {
                 <button
                   className="addToCartBtn"
                   onClick={() => {
-                    if (selectedProduct.unitsInStock - cartItems[selectedProduct.id] <= 0) {
+                    if (
+                      selectedProduct.unitsInStock -
+                        cartItems[selectedProduct.id] <=
+                      0
+                    ) {
                       notify(
                         `Cannot add more items. Only ${selectedProduct.unitsInStock} items are left in stock.`,
                         'error',
