@@ -8,8 +8,7 @@
   height: 40px;
   cursor: pointer;
   transition: var(--transition);
-  border: var(--border-black);
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .profilePic:hover {
