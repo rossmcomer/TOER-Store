@@ -71,6 +71,9 @@ router.post('/', async (req, res) => {
                 unitPrice: item.price.unit_amount / 100,
                 salesTax: item.tax_amounts[0]?.amount / 100,
               })
+
+              product.unitsInStock -= item.quantity
+              await product.save()
             }
           }
         }
