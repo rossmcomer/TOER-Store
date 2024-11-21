@@ -1,0 +1,23 @@
+.categoryPicker {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+}
+
+.categoryPicker label {
+  margin-bottom: 10px;
+}
+
+#categoryDropdown {
+  text-align: center;
+  border-radius: 5px;
+  background-color: transparent;
+  height: 30px;
+}
+
+#categoryDropdown select {
+  text-align: center;
+  border-radius: 5px;
+  background-color: transparent;
+}

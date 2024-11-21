@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import productService from '../services/products'
+import categoryService from '../services/categories'
 
 export const ShopContext = createContext(null)
 
@@ -14,10 +15,10 @@ const getDefaultCart = (products) => {
 
 export const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([])
+  const [categories, setCategories] = useState([])
   const [cartItems, setCartItems] = useState({})
   const [loading, setLoading] = useState(true)
   const [allProducts, setAllProducts] = useState([])
-  const [cartItemsCount, setCartItemsCount] = useState(0)
 
   useEffect(() => {
     const fetchproducts = async () => {
@@ -33,7 +34,12 @@ export const ShopContextProvider = (props) => {
         setLoading(false)
       }
     }
+    const fetchCategories = async () => {
+      const categories = await categoryService.getAll()
+      setCategories(categories)
+    }
     fetchproducts()
+    fetchCategories()
   }, [])
 
   const groupProductsByName = (products) => {
@@ -136,6 +142,7 @@ export const ShopContextProvider = (props) => {
     allProducts,
     loading,
     cartItems,
+    categories,
     notify,
     addToCart,
     removeFromCart,

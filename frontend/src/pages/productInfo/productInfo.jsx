@@ -13,8 +13,6 @@ export const ProductInfo = () => {
   const availableProducts = allProducts.filter(
     (item) => item.name === product.name,
   )
-  console.log(availableProducts, 'availableproducts')
-  console.log(selectedProduct, 'selectedProduct')
 
   const handleSizeSelect = (size) => {
     const product = availableProducts.find((p) => p.size === size)
