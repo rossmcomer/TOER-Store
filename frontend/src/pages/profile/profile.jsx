@@ -32,16 +32,14 @@ export const Profile = () => {
 
   return isAuthenticated ? (
     <div id="profileContainer">
-      {/* <div className="userInfo">
-        <img src={user.picture} alt="User Picture" className="profilePic" />
-        <div>{user.name}</div>
-      </div> */}
       <div id="ordersContainer">
         <h2>Orders</h2>
         {orders.length > 0 ? (
           <OrdersTable orders={orders} />
         ) : (
-          <div>You don't have any orders associated with your account.</div>
+          <div className="noOrders">
+            You don't have any orders associated with your account.
+          </div>
         )}
       </div>
     </div>

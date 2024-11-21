@@ -23,6 +23,10 @@
   flex-direction: column;
 }
 
+.noOrders {
+  text-align: center;
+}
+
 #ordersContainer {
   overflow: auto;
   max-width: 700px;

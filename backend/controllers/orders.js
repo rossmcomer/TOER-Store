@@ -1,9 +1,6 @@
 const router = require('express').Router()
 const { tokenExtractor } = require('../util/middleware')
 const {
-  Product,
-  ProductImage,
-  Category,
   Order,
   OrderDetail,
 } = require('../models')

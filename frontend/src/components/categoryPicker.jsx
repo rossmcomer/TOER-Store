@@ -17,7 +17,8 @@ const CategoryPicker = ({ categories, onCategorySelect }) => {
         value={selectedCategory}
         onChange={handleCategoryChange}
       >
-        <option value="all">All Products</option>
+        <option value="all">Filter Products</option>
+        <option value="all">All</option>
         {categories.map((category) => (
           <option key={category.id} value={category.name}>
             {category.name}
