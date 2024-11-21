@@ -12,12 +12,32 @@
 #categoryDropdown {
   text-align: center;
   border-radius: 5px;
+  border: var(--border);
   background-color: transparent;
   height: 30px;
+  color: var(--text-color);
+  font-family: 'Event Horizon Medium', monospace;
+  transition:
+    border 0.3s ease,
+    color 0.3s ease;
 }
 
-#categoryDropdown select {
+#categoryDropdown:hover {
+  cursor: pointer;
+}
+
+#categoryDropdown:focus {
+  outline: none;
+}
+
+#categoryDropdown option {
   text-align: center;
   border-radius: 5px;
   background-color: transparent;
+  font-family: 'Event Horizon Medium', monospace;
+  color: var(--black);
+}
+
+#categoryDropdown option:hover {
+  cursor: pointer;
 }
