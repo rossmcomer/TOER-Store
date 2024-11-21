@@ -110,7 +110,7 @@ input[type='radio'] + label span {
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-in-out;
-  background-color: var(--background-color);
+  background-color: transparent;
   border: var(--border);
   border-radius: 5px;
   justify-content: center;
