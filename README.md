@@ -1,7 +1,7 @@
 # TOER Store
 ## E-commerce app integrated with Stripe for payments and Auth0 for SSO
 
-Visit the app at https://trackstarapp.com
+Visit the app at https://toerstore.com
 
 ### HOW TO USE SIGN UP WITH AUTH0/OKTA
 
@@ -26,5 +26,9 @@ Click the "Checkout" button and you will be redirected to the Stripe payments pa
 To simulate a successful payment, use credit card number "4242424242424242".  After payment is confirmed you will be redirected to the success page.
 
 To simulate a declined payment, use credit card number "4000000000009995".  After payment is declined you will be redirected to the payment cancelled page.
+
+### VIEW PAST ORDERS
+
+To view your past order you must complete an order with a valid account created with the sign-in portal.  Upon completing an order, visit the profile section from the menu in the top right of your screen.
 
 Thank you for using my app!
