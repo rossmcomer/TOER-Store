@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
                 productId: product.id,
                 quantity: item.quantity,
                 unitPrice: item.price.unit_amount / 100,
-                salesTax: item.tax_amounts[0]?.amount / 100,
+                salesTax: item.amount_tax / 100,
               })
 
               product.unitsInStock -= item.quantity
