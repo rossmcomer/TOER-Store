@@ -1,5 +1,6 @@
 .env
 .eslintrc
+toerstore-kp.pem
 
 # dependencies
 /node_modules
