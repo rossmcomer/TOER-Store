@@ -33,16 +33,15 @@ export const ProductInfo = () => {
             </div>
             <div className="image-and-sizes">
               <div className="product-image-container">
-                {product.images.map((image, index) => (
+                {product.images.length > 0 && (
                   <img
                     className="productInfoImage"
-                    key={index}
-                    src={image.imageUrl}
-                    alt={`${index + 1}`}
+                    src={product.images[0].imageUrl}
+                    alt="Product Image"
                     width={300}
                     height={300}
                   />
-                ))}
+                )}
               </div>
               <div className="sizes-container">
                 <button
