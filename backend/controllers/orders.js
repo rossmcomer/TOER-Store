@@ -1,9 +1,6 @@
 const router = require('express').Router()
 const { tokenExtractor } = require('../util/middleware')
-const {
-  Order,
-  OrderDetail,
-} = require('../models')
+const { Order, OrderDetail } = require('../models')
 
 router.get('/', tokenExtractor, async (req, res) => {
   try {

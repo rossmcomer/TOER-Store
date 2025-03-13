@@ -26,10 +26,9 @@ module.exports = {
         defaultValue: 0.0,
       },
     })
-
   },
 
   down: async ({ context: queryInterface }) => {
     await queryInterface.dropTable('orders')
-  }
+  },
 }

@@ -15,7 +15,7 @@ export const ProductInfo = () => {
   )
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedImage, setSelectedImage] = useState(
-    product?.images?.[0]?.imageUrl || ""
+    product?.images?.[0]?.imageUrl || '',
   )
 
   const handleSizeSelect = (size) => {
@@ -42,7 +42,11 @@ export const ProductInfo = () => {
           {isModalOpen && (
             <div className="modal-overlay" onClick={closeModal}>
               <div className="modal-content">
-                <img src={selectedImage} alt="Blown-up Product" className="modal-image" />
+                <img
+                  src={selectedImage}
+                  alt="Blown-up Product"
+                  className="modal-image"
+                />
               </div>
             </div>
           )}
