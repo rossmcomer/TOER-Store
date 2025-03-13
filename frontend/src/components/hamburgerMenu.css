@@ -9,32 +9,12 @@
   cursor: pointer;
   transition: var(--transition);
   border-radius: 5px;
+  border: var(--border-black);
 }
 
 .profilePic:hover {
   transform: scale(1.25);
 }
-
-/* .hamburger-icon {
-  cursor: pointer;
-  width: 30px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: var(--transition);
-}
-
-.hamburger-icon:hover {
-  transform: scale(1.25);
-}
-
-.hamburger-icon span {
-  display: block;
-  height: 4px;
-  background-color: #000;
-  border-radius: 5px;
-} */
 
 .menu-options {
   display: flex;
