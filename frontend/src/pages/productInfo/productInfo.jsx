@@ -57,7 +57,7 @@ export const ProductInfo = () => {
               </p>
             </div>
             <div className="image-and-sizes">
-              <div className="product-image-container">
+              <div className="productInfo-image-container">
                 {product.images.length > 0 && (
                   <img
                     className="productInfoImage"

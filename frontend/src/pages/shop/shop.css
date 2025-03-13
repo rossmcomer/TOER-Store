@@ -41,7 +41,6 @@
 .product img {
   width: 300px;
   border-radius: 7px;
-  /* border: var(--border-bold); */
   box-shadow: var(--box-shadow-color);
   transition:
     border 0.3s ease,
