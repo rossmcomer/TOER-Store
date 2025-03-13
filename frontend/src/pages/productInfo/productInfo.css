@@ -30,9 +30,6 @@
 }
 
 @media (hover: none) {
-  .product-image-container {
-    opacity: 1 !important;
-  }
   .productInfo-image-container {
     opacity: 1 !important;
   }

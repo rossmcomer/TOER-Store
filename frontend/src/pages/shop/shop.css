@@ -53,6 +53,12 @@
   transition: opacity 0.1s ease-in-out;
 }
 
+@media (hover: none) {
+  .product-image-container {
+    opacity: 1 !important;
+  }
+}
+
 .product .description {
   text-align: center;
   color: var(--text-color);
