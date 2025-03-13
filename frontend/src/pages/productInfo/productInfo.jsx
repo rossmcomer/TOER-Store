@@ -13,10 +13,24 @@ export const ProductInfo = () => {
   const availableProducts = allProducts.filter(
     (item) => item.name === product.name,
   )
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedImage, setSelectedImage] = useState(
+    product?.images?.[0]?.imageUrl || ""
+  )
 
   const handleSizeSelect = (size) => {
     const product = availableProducts.find((p) => p.size === size)
     setSelectedProduct(product)
+  }
+
+  const handleImageClick = (imageUrl) => {
+    setSelectedImage(imageUrl)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedImage(null)
   }
   return (
     <div>
@@ -25,6 +39,13 @@ export const ProductInfo = () => {
       </div>
       <div className="productInfoWithBtn">
         <div className="product-info-container">
+          {isModalOpen && (
+            <div className="modal-overlay" onClick={closeModal}>
+              <div className="modal-content">
+                <img src={selectedImage} alt="Blown-up Product" className="modal-image" />
+              </div>
+            </div>
+          )}
           <div className="productInfo">
             <div className="description">
               <p>
@@ -40,6 +61,7 @@ export const ProductInfo = () => {
                     alt="Product Image"
                     width={300}
                     height={300}
+                    onClick={() => handleImageClick(product.images[0].imageUrl)}
                   />
                 )}
               </div>
