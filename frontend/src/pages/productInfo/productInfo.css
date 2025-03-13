@@ -29,6 +29,12 @@
   transition: opacity 0.1s ease-in-out;
 }
 
+@media (hover: none) {
+  .productInfo-image-container {
+    opacity: 1 !important;
+  }
+}
+
 .productInfo img {
   width: 300px;
   border-radius: 7px;
