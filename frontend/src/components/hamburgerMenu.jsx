@@ -11,6 +11,8 @@ const HamburgerMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+
+  console.log(user)
   return (
     <div className="hamburgerMenuContainer">
       {/* <div className="hamburger-icon" onClick={toggleMenu}>

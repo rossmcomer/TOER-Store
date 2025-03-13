@@ -23,8 +23,6 @@ router.post('/', async (req, res) => {
     case 'checkout.session.completed':
       const checkoutSessionCompleted = event.data.object
 
-      const customerName = checkoutSessionCompleted.customer_details.name
-      const customerEmail = checkoutSessionCompleted.customer_details.email
       const orderDate = new Date(checkoutSessionCompleted.created * 1000)
       const totalAmount = checkoutSessionCompleted.amount_total / 100
       const salesTax = checkoutSessionCompleted.total_details.amount_tax / 100
@@ -34,8 +32,6 @@ router.post('/', async (req, res) => {
         // Save to orders table
         const newOrder = await Order.create({
           orderDate: orderDate,
-          customerName: customerName,
-          customerEmail: customerEmail,
           totalAmount: totalAmount,
           salesTax: salesTax,
           oktaUserId: oktaUserId,

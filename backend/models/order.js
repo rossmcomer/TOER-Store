@@ -19,14 +19,6 @@ Order.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    customerName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    customerEmail: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     totalAmount: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,

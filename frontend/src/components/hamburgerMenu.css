@@ -9,7 +9,7 @@
   cursor: pointer;
   transition: var(--transition);
   border-radius: 5px;
-  border: var(--border-black);
+  border: var(--border-bold-black);
 }
 
 .profilePic:hover {
