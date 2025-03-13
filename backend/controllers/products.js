@@ -1,13 +1,12 @@
 const router = require('express').Router()
-const { Product, ProductImage, Category, Supplier } = require('../models')
+const { Product, ProductImage, Category } = require('../models')
 
 router.get('/', async (req, res) => {
   try {
     const products = await Product.findAll({
-      exclude: ['category_id', 'supplier_id'],
+      exclude: ['category_id'],
       include: [
         { model: Category, attributes: ['name'] },
-        { model: Supplier, attributes: ['name'] },
         { model: ProductImage, attributes: ['imageUrl'], as: 'images' },
       ],
     })
@@ -26,7 +25,6 @@ router.get('/:name', async (req, res) => {
       include: [
         { model: ProductImage, attributes: ['imageUrl'], as: 'images' },
         { model: Category, attributes: ['name'] },
-        { model: Supplier, attributes: ['name'] },
       ],
     })
 

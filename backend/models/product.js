@@ -27,13 +27,6 @@ Product.init(
       },
       allowNull: false,
     },
-    supplierId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'suppliers',
-        key: 'id',
-      },
-    },
     size: {
       type: DataTypes.STRING(50),
       allowNull: true,

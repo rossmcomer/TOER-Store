@@ -15,7 +15,7 @@ ProductImage.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'products',
-        key: 'product_id',
+        key: 'id',
       },
       allowNull: false,
     },
