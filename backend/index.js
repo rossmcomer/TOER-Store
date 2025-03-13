@@ -22,10 +22,10 @@ const productsRouter = require('./controllers/products')
 const ordersRouter = require('./controllers/orders')
 const categoriesRouter = require('./controllers/categories')
 
-app.use('/api/products', productsRouter)
-app.use('/api/create-checkout-session', checkoutRouter)
-app.use('/api/orders', ordersRouter)
-app.use('/api/categories', categoriesRouter)
+app.use('/products', productsRouter)
+app.use('/create-checkout-session', checkoutRouter)
+app.use('/orders', ordersRouter)
+app.use('/categories', categoriesRouter)
 
 const errorHandler = (error, req, res, next) => {
   console.error(error.message)
