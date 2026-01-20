@@ -9,7 +9,7 @@ import { ShopContext } from '../context/shop-context'
 
 export const NavBar = () => {
   const { isAuthenticated } = useAuth0()
-  const { getCartItemsCount, cartItemsCount } = useContext(ShopContext)
+  const { getCartItemsCount } = useContext(ShopContext)
 
   return (
     <div className="navbar">

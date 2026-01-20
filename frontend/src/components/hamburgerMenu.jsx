@@ -22,7 +22,7 @@ const HamburgerMenu = () => {
       </div> */}
       <img
         src={user.picture}
-        alt="User Picture"
+        alt="User Profile"
         className="profilePic"
         onClick={toggleMenu}
       ></img>
