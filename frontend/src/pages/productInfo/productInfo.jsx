@@ -62,7 +62,7 @@ export const ProductInfo = () => {
                   <img
                     className="productInfoImage"
                     src={product.images[0].imageUrl}
-                    alt="Product Image"
+                    alt="Product"
                     width={300}
                     height={300}
                     onClick={() => handleImageClick(product.images[0].imageUrl)}
