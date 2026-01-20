@@ -12,4 +12,6 @@ const getOne = async (encodedName) => {
   return request.data
 }
 
-export default { getAll, getOne }
+const productService = { getAll, getOne };
+
+export default productService;
