@@ -44,7 +44,6 @@ export const ThemeToggle = () => {
     const {
       black,
       white,
-      grey,
       boxShadowBlack,
       borderBlack,
       borderWhite,
