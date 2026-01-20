@@ -27,6 +27,8 @@ app.use('/api/create-checkout-session', checkoutRouter)
 app.use('/api/orders', ordersRouter)
 app.use('/api/categories', categoriesRouter)
 
+app.get('/health', (req, res) => res.send('OK'))
+
 const errorHandler = (error, req, res, next) => {
   console.error(error.message)
 
