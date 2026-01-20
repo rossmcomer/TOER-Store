@@ -7,8 +7,7 @@ const { PORT } = require('./util/config')
 const { connectToDatabase } = require('./util/db')
 
 app.use(cors({
-  origin: ['https://toerstore.pages.dev'],
-  credentials: true
+  origin: ['https://toerstore.pages.dev']
 }));
 
 const saveOrderInfoRouter = require('./controllers/stripe-webhook')
