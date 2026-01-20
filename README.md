@@ -31,4 +31,4 @@ To simulate a declined payment, use credit card number "4000000000009995".  Afte
 
 To view your past order you must complete an order with a valid account created with the sign-in portal.  Upon completing an order, visit the profile section from the menu in the top right of your screen.
 
-Thank you for using my app!
+Thank you for demoing my app!
