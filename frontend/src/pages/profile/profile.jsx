@@ -24,7 +24,7 @@ export const Profile = () => {
       }
     }
     fetchUserOrders()
-  }, [user])
+  }, [user, getAccessTokenSilently, isAuthenticated])
 
   if (isLoading) {
     return <div>Loading ...</div>
