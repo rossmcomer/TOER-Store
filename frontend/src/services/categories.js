@@ -7,4 +7,6 @@ const getAll = async () => {
   return request.data
 }
 
-export default getAll
+const categoryService = { getAll }
+
+export default categoryService

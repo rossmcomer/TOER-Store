@@ -11,4 +11,6 @@ const getAll = async (token) => {
   return response.data
 }
 
-export default getAll
+const userOrdersService = { getAll }
+
+export default userOrdersService

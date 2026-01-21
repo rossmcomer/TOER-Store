@@ -9,5 +9,6 @@ const checkout = async (body) => {
   return response.data
 }
 
-// eslint-disable-next-line
-export default { checkout }
+const checkoutService = { checkout }
+
+export default checkoutService
